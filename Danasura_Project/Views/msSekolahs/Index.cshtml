@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Danasura_Project.Models.msSekolah>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin2.cshtml";
+    var nomor = 0;
+}
+
+<h2>Data Sekolah</h2>
+
+<p>
+    @Html.ActionLink("Tambah Data Sekolah", "Create", new { area = "" }, htmlAttributes: new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nama_sekolah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.akreditasi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamat_sekolah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.provinsi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kecamatan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.status == 1)
+    {
+        nomor++;
+        <tr>
+            <td>
+                @nomor
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nama_sekolah)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.akreditasi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.alamat_sekolah)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.provinsi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kecamatan)
+            </td>
+            <td>
+                @Html.ActionLink("Ubah", "Edit", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Hapus", "Delete", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+}
+
+</table>

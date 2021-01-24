@@ -1,0 +1,172 @@
+﻿@model IEnumerable<Danasura_Project.Models.msSiswa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDonatur.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jenis_kelamin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tempat_lahir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tanggal_lahir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.no_telp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomor_kip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jenjang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semester_awal)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.nama_ayah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pekerjaan_ayah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nama_ibu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pekerjaan_ibu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sb_kuota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sb_seragam)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_by)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_by)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.dtNISNKJP.no_kip)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.msSekolah.nama_sekolah)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jenis_kelamin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tempat_lahir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tanggal_lahir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alamat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.no_telp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomor_kip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jenjang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semester_awal)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.nama_ayah)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pekerjaan_ayah)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nama_ibu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pekerjaan_ibu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sb_kuota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sb_seragam)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_by)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_by)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.dtNISNKJP.no_kip)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.msSekolah.nama_sekolah)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_siswa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_siswa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_siswa })
+        </td>
+    </tr>
+}
+
+</table>

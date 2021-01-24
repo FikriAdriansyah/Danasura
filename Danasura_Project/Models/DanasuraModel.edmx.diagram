@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="230d3b3620604e73b8baaead27c433a3" Name="Diagram1">
+        <EntityTypeShape EntityType="danasuraModel.dtNISNKJP" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msBank" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msBarang" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msDonatur" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msKategoriBarang" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msProvider" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msSekolah" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msSiswa" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.msStaff" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.trDonasiBarang" Width="1.5" PointX="13" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.trDonasiUang" Width="1.5" PointX="13" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.trPencairanKuota" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.trPengajuanSeragam" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.trPengajuanSPP" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="danasuraModel.trPermintaanBarang" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="danasuraModel.FK_msSiswa_dtNISNKJP" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trDonasiUang_msBank" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_msBarang_msKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPermintaanBarang_msBarang" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trDonasiBarang_msDonatur" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trDonasiUang_msDonatur" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trDonasiBarang_msKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPencairanKuota_msProvider" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_msSiswa_msSekolah" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPencairanKuota_msSiswa" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPengajuanSeragam_msSiswa" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPengajuanSPP_msSiswa" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPermintaanBarang_msSiswa" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPengajuanSeragam_msStaff" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPengajuanSPP_msStaff" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPermintaanBarang_msStaff" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

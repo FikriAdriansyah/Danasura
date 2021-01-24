@@ -1,0 +1,139 @@
+﻿@model Danasura_Project.Models.msDonatur
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDonatur.cshtml";
+}
+
+<h2>Profil Donatur</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_ktp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_ktp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempat_lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempat_lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tanggal_lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tanggal_lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jenis_kelamin)
+        </dt>
+
+        @if (Model.jenis_kelamin == 1)
+        {
+            <dd>
+                Laki-laki
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agama)
+        </dt>
+
+        @if (Model.agama == 1)
+        {
+            <dd>
+                Islam
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pekerjaan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pekerjaan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kewarganegaraan)
+        </dt>
+
+        @if (Model.kewarganegaraan == 1)
+        {
+            <dd>
+                WNI
+            </dd>
+        }
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.created_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_date)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", "msDonaturs", new { id = Model.id_donatur }, "")
+</p>

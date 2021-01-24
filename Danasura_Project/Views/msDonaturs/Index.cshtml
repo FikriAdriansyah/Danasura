@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Danasura_Project.Models.msDonatur>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.no_ktp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tempat_lahir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tanggal_lahir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jenis_kelamin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.agama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pekerjaan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kewarganegaraan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.no_ktp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tempat_lahir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tanggal_lahir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jenis_kelamin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alamat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.agama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pekerjaan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kewarganegaraan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_donatur }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_donatur }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_donatur })
+        </td>
+    </tr>
+}
+
+</table>

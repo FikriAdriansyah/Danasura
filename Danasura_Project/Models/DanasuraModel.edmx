@@ -1,0 +1,1411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="danasuraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dtNISNKJP">
+          <Key>
+            <PropertyRef Name="nisn" />
+          </Key>
+          <Property Name="nisn" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="no_kip" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nama_siswa" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="jenjang" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="msBank">
+          <Key>
+            <PropertyRef Name="id_bank" />
+          </Key>
+          <Property Name="id_bank" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama_bank" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="atas_nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="no_rekening" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="msBarang">
+          <Key>
+            <PropertyRef Name="id_barang" />
+          </Key>
+          <Property Name="id_barang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="id_kategori" Type="int" Nullable="false" />
+          <Property Name="merk" Type="varchar" MaxLength="100" />
+          <Property Name="berat" Type="int" />
+          <Property Name="kondisi" Type="int" Nullable="false" />
+          <Property Name="keterangan" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="msDonatur">
+          <Key>
+            <PropertyRef Name="id_donatur" />
+          </Key>
+          <Property Name="id_donatur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="no_ktp" Type="varchar" MaxLength="16" />
+          <Property Name="tempat_lahir" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tanggal_lahir" Type="date" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="int" Nullable="false" />
+          <Property Name="alamat" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="agama" Type="int" Nullable="false" />
+          <Property Name="pekerjaan" Type="varchar" MaxLength="100" />
+          <Property Name="kewarganegaraan" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="modified_date" Type="date" />
+        </EntityType>
+        <EntityType Name="msKategoriBarang">
+          <Key>
+            <PropertyRef Name="id_kategori" />
+          </Key>
+          <Property Name="id_kategori" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="msProvider">
+          <Key>
+            <PropertyRef Name="id_provider" />
+          </Key>
+          <Property Name="id_provider" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama_provider" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="jenis_provider" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="harga" Type="money" Nullable="false" />
+          <Property Name="deskripsi" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="msSekolah">
+          <Key>
+            <PropertyRef Name="id_sekolah" />
+          </Key>
+          <Property Name="id_sekolah" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama_sekolah" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="akreditasi" Type="int" Nullable="false" />
+          <Property Name="nama_cp" Type="varchar" MaxLength="50" />
+          <Property Name="no_cp" Type="varchar" MaxLength="13" />
+          <Property Name="alamat_sekolah" Type="varchar" MaxLength="200" />
+          <Property Name="provinsi" Type="varchar" MaxLength="100" />
+          <Property Name="kota" Type="varchar" MaxLength="100" />
+          <Property Name="kecamatan" Type="varchar" MaxLength="100" />
+          <Property Name="jml_penerimaKIP" Type="int" />
+          <Property Name="harga_spp" Type="money" Nullable="false" />
+          <Property Name="harga_seragam" Type="money" Nullable="false" />
+          <Property Name="deskripsi" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="msSiswa">
+          <Key>
+            <PropertyRef Name="id_siswa" />
+          </Key>
+          <Property Name="id_siswa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nisn" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="int" Nullable="false" />
+          <Property Name="tempat_lahir" Type="varchar" MaxLength="100" />
+          <Property Name="tanggal_lahir" Type="date" />
+          <Property Name="alamat" Type="varchar" MaxLength="200" />
+          <Property Name="no_telp" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="nomor_kip" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="jenjang" Type="int" Nullable="false" />
+          <Property Name="id_sekolah" Type="int" Nullable="false" />
+          <Property Name="semester_awal" Type="date" />
+          <Property Name="status" Type="int" />
+          <Property Name="nama_ayah" Type="varchar" MaxLength="50" />
+          <Property Name="pekerjaan_ayah" Type="varchar" MaxLength="50" />
+          <Property Name="nama_ibu" Type="varchar" MaxLength="50" />
+          <Property Name="pekerjaan_ibu" Type="varchar" MaxLength="50" />
+          <Property Name="sb_kuota" Type="int" Nullable="false" />
+          <Property Name="sb_seragam" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="msStaff">
+          <Key>
+            <PropertyRef Name="id_staff" />
+          </Key>
+          <Property Name="id_staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama_staff" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="varchar" MaxLength="10" />
+          <Property Name="no_ktp" Type="varchar" MaxLength="16" />
+          <Property Name="tempat_lahir" Type="varchar" MaxLength="50" />
+          <Property Name="tanggal_lahir" Type="date" />
+          <Property Name="alamat" Type="varchar" MaxLength="100" />
+          <Property Name="no_telp" Type="varchar" MaxLength="13" />
+          <Property Name="pendidikan_terakhir" Type="varchar" MaxLength="100" />
+          <Property Name="tahun_masuk" Type="date" />
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="role" Type="int" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="trDonasiBarang">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tgl_trans" Type="date" Nullable="false" />
+          <Property Name="nama_barang" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="id_donatur" Type="int" Nullable="false" />
+          <Property Name="id_kategori" Type="int" Nullable="false" />
+          <Property Name="kondisi" Type="int" Nullable="false" />
+          <Property Name="keterangan" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="trDonasiUang">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tgl_trans" Type="date" Nullable="false" />
+          <Property Name="id_donatur" Type="int" Nullable="false" />
+          <Property Name="id_bank" Type="int" Nullable="false" />
+          <Property Name="total_donasi" Type="money" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="trPencairanKuota">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tgl_trans" Type="date" Nullable="false" />
+          <Property Name="id_provider" Type="int" Nullable="false" />
+          <Property Name="id_siswa" Type="int" Nullable="false" />
+          <Property Name="jml_kuota" Type="int" Nullable="false" />
+          <Property Name="total_biaya" Type="money" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="trPengajuanSeragam">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tgl_trans" Type="date" Nullable="false" />
+          <Property Name="id_siswa" Type="int" Nullable="false" />
+          <Property Name="id_staff" Type="int" />
+          <Property Name="ukuran" Type="int" Nullable="false" />
+          <Property Name="keterangan" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="total_biaya" Type="money" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="trPengajuanSPP">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tgl_trans" Type="date" Nullable="false" />
+          <Property Name="id_siswa" Type="int" Nullable="false" />
+          <Property Name="id_staff" Type="int" />
+          <Property Name="jml_bulan" Type="int" Nullable="false" />
+          <Property Name="total_biaya" Type="money" Nullable="false" />
+          <Property Name="status" Type="int" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="trPermintaanBarang">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tgl_trans" Type="date" Nullable="false" />
+          <Property Name="id_siswa" Type="int" Nullable="false" />
+          <Property Name="id_staff" Type="int" />
+          <Property Name="id_barang" Type="int" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="modified_date" Type="date" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_msBarang_msKategori">
+          <End Role="msKategoriBarang" Type="Self.msKategoriBarang" Multiplicity="1" />
+          <End Role="msBarang" Type="Self.msBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msKategoriBarang">
+              <PropertyRef Name="id_kategori" />
+            </Principal>
+            <Dependent Role="msBarang">
+              <PropertyRef Name="id_kategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_msSiswa_dtNISNKJP">
+          <End Role="dtNISNKJP" Type="Self.dtNISNKJP" Multiplicity="1" />
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtNISNKJP">
+              <PropertyRef Name="nisn" />
+            </Principal>
+            <Dependent Role="msSiswa">
+              <PropertyRef Name="nisn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_msSiswa_msSekolah">
+          <End Role="msSekolah" Type="Self.msSekolah" Multiplicity="1" />
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSekolah">
+              <PropertyRef Name="id_sekolah" />
+            </Principal>
+            <Dependent Role="msSiswa">
+              <PropertyRef Name="id_sekolah" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiBarang_msDonatur">
+          <End Role="msDonatur" Type="Self.msDonatur" Multiplicity="1" />
+          <End Role="trDonasiBarang" Type="Self.trDonasiBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msDonatur">
+              <PropertyRef Name="id_donatur" />
+            </Principal>
+            <Dependent Role="trDonasiBarang">
+              <PropertyRef Name="id_donatur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiBarang_msKategori">
+          <End Role="msKategoriBarang" Type="Self.msKategoriBarang" Multiplicity="1" />
+          <End Role="trDonasiBarang" Type="Self.trDonasiBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msKategoriBarang">
+              <PropertyRef Name="id_kategori" />
+            </Principal>
+            <Dependent Role="trDonasiBarang">
+              <PropertyRef Name="id_kategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiUang_msBank">
+          <End Role="msBank" Type="Self.msBank" Multiplicity="1" />
+          <End Role="trDonasiUang" Type="Self.trDonasiUang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msBank">
+              <PropertyRef Name="id_bank" />
+            </Principal>
+            <Dependent Role="trDonasiUang">
+              <PropertyRef Name="id_bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiUang_msDonatur">
+          <End Role="msDonatur" Type="Self.msDonatur" Multiplicity="1" />
+          <End Role="trDonasiUang" Type="Self.trDonasiUang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msDonatur">
+              <PropertyRef Name="id_donatur" />
+            </Principal>
+            <Dependent Role="trDonasiUang">
+              <PropertyRef Name="id_donatur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPencairanKuota_msProvider">
+          <End Role="msProvider" Type="Self.msProvider" Multiplicity="1" />
+          <End Role="trPencairanKuota" Type="Self.trPencairanKuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msProvider">
+              <PropertyRef Name="id_provider" />
+            </Principal>
+            <Dependent Role="trPencairanKuota">
+              <PropertyRef Name="id_provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPencairanKuota_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPencairanKuota" Type="Self.trPencairanKuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPencairanKuota">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSeragam_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPengajuanSeragam" Type="Self.trPengajuanSeragam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPengajuanSeragam">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSeragam_msStaff">
+          <End Role="msStaff" Type="Self.msStaff" Multiplicity="0..1" />
+          <End Role="trPengajuanSeragam" Type="Self.trPengajuanSeragam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msStaff">
+              <PropertyRef Name="id_staff" />
+            </Principal>
+            <Dependent Role="trPengajuanSeragam">
+              <PropertyRef Name="id_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSPP_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPengajuanSPP" Type="Self.trPengajuanSPP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPengajuanSPP">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSPP_msStaff">
+          <End Role="msStaff" Type="Self.msStaff" Multiplicity="0..1" />
+          <End Role="trPengajuanSPP" Type="Self.trPengajuanSPP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msStaff">
+              <PropertyRef Name="id_staff" />
+            </Principal>
+            <Dependent Role="trPengajuanSPP">
+              <PropertyRef Name="id_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPermintaanBarang_msBarang">
+          <End Role="msBarang" Type="Self.msBarang" Multiplicity="1" />
+          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msBarang">
+              <PropertyRef Name="id_barang" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_barang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPermintaanBarang_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPermintaanBarang_msStaff">
+          <End Role="msStaff" Type="Self.msStaff" Multiplicity="0..1" />
+          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msStaff">
+              <PropertyRef Name="id_staff" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="danasuraModelStoreContainer">
+          <EntitySet Name="dtNISNKJP" EntityType="Self.dtNISNKJP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msBank" EntityType="Self.msBank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msBarang" EntityType="Self.msBarang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msDonatur" EntityType="Self.msDonatur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msKategoriBarang" EntityType="Self.msKategoriBarang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msProvider" EntityType="Self.msProvider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msSekolah" EntityType="Self.msSekolah" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msSiswa" EntityType="Self.msSiswa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msStaff" EntityType="Self.msStaff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trDonasiBarang" EntityType="Self.trDonasiBarang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trDonasiUang" EntityType="Self.trDonasiUang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trPencairanKuota" EntityType="Self.trPencairanKuota" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trPengajuanSeragam" EntityType="Self.trPengajuanSeragam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trPengajuanSPP" EntityType="Self.trPengajuanSPP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trPermintaanBarang" EntityType="Self.trPermintaanBarang" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_msBarang_msKategori" Association="Self.FK_msBarang_msKategori">
+            <End Role="msKategoriBarang" EntitySet="msKategoriBarang" />
+            <End Role="msBarang" EntitySet="msBarang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_msSiswa_dtNISNKJP" Association="Self.FK_msSiswa_dtNISNKJP">
+            <End Role="dtNISNKJP" EntitySet="dtNISNKJP" />
+            <End Role="msSiswa" EntitySet="msSiswa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_msSiswa_msSekolah" Association="Self.FK_msSiswa_msSekolah">
+            <End Role="msSekolah" EntitySet="msSekolah" />
+            <End Role="msSiswa" EntitySet="msSiswa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiBarang_msDonatur" Association="Self.FK_trDonasiBarang_msDonatur">
+            <End Role="msDonatur" EntitySet="msDonatur" />
+            <End Role="trDonasiBarang" EntitySet="trDonasiBarang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiBarang_msKategori" Association="Self.FK_trDonasiBarang_msKategori">
+            <End Role="msKategoriBarang" EntitySet="msKategoriBarang" />
+            <End Role="trDonasiBarang" EntitySet="trDonasiBarang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiUang_msBank" Association="Self.FK_trDonasiUang_msBank">
+            <End Role="msBank" EntitySet="msBank" />
+            <End Role="trDonasiUang" EntitySet="trDonasiUang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiUang_msDonatur" Association="Self.FK_trDonasiUang_msDonatur">
+            <End Role="msDonatur" EntitySet="msDonatur" />
+            <End Role="trDonasiUang" EntitySet="trDonasiUang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPencairanKuota_msProvider" Association="Self.FK_trPencairanKuota_msProvider">
+            <End Role="msProvider" EntitySet="msProvider" />
+            <End Role="trPencairanKuota" EntitySet="trPencairanKuota" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPencairanKuota_msSiswa" Association="Self.FK_trPencairanKuota_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswa" />
+            <End Role="trPencairanKuota" EntitySet="trPencairanKuota" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSeragam_msSiswa" Association="Self.FK_trPengajuanSeragam_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswa" />
+            <End Role="trPengajuanSeragam" EntitySet="trPengajuanSeragam" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSeragam_msStaff" Association="Self.FK_trPengajuanSeragam_msStaff">
+            <End Role="msStaff" EntitySet="msStaff" />
+            <End Role="trPengajuanSeragam" EntitySet="trPengajuanSeragam" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSPP_msSiswa" Association="Self.FK_trPengajuanSPP_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswa" />
+            <End Role="trPengajuanSPP" EntitySet="trPengajuanSPP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSPP_msStaff" Association="Self.FK_trPengajuanSPP_msStaff">
+            <End Role="msStaff" EntitySet="msStaff" />
+            <End Role="trPengajuanSPP" EntitySet="trPengajuanSPP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msBarang" Association="Self.FK_trPermintaanBarang_msBarang">
+            <End Role="msBarang" EntitySet="msBarang" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msSiswa" Association="Self.FK_trPermintaanBarang_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswa" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msStaff" Association="Self.FK_trPermintaanBarang_msStaff">
+            <End Role="msStaff" EntitySet="msStaff" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarang" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="danasuraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dtNISNKJP">
+          <Key>
+            <PropertyRef Name="nisn" />
+          </Key>
+          <Property Name="nisn" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="no_kip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama_siswa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenjang" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="msSiswas" Relationship="Self.FK_msSiswa_dtNISNKJP" FromRole="dtNISNKJP" ToRole="msSiswa" />
+        </EntityType>
+        <EntityType Name="msBank">
+          <Key>
+            <PropertyRef Name="id_bank" />
+          </Key>
+          <Property Name="id_bank" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama_bank" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="atas_nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="no_rekening" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="trDonasiUangs" Relationship="Self.FK_trDonasiUang_msBank" FromRole="msBank" ToRole="trDonasiUang" />
+        </EntityType>
+        <EntityType Name="msBarang">
+          <Key>
+            <PropertyRef Name="id_barang" />
+          </Key>
+          <Property Name="id_barang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_kategori" Type="Int32" Nullable="false" />
+          <Property Name="merk" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="berat" Type="Int32" />
+          <Property Name="kondisi" Type="Int32" Nullable="false" />
+          <Property Name="keterangan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msKategoriBarang" Relationship="Self.FK_msBarang_msKategori" FromRole="msBarang" ToRole="msKategoriBarang" />
+          <NavigationProperty Name="trPermintaanBarangs" Relationship="Self.FK_trPermintaanBarang_msBarang" FromRole="msBarang" ToRole="trPermintaanBarang" />
+        </EntityType>
+        <EntityType Name="msDonatur">
+          <Key>
+            <PropertyRef Name="id_donatur" />
+          </Key>
+          <Property Name="id_donatur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="no_ktp" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="tempat_lahir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tanggal_lahir" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="jenis_kelamin" Type="Int32" Nullable="false" />
+          <Property Name="alamat" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="agama" Type="Int32" Nullable="false" />
+          <Property Name="pekerjaan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kewarganegaraan" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="trDonasiBarangs" Relationship="Self.FK_trDonasiBarang_msDonatur" FromRole="msDonatur" ToRole="trDonasiBarang" />
+          <NavigationProperty Name="trDonasiUangs" Relationship="Self.FK_trDonasiUang_msDonatur" FromRole="msDonatur" ToRole="trDonasiUang" />
+        </EntityType>
+        <EntityType Name="msKategoriBarang">
+          <Key>
+            <PropertyRef Name="id_kategori" />
+          </Key>
+          <Property Name="id_kategori" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msBarangs" Relationship="Self.FK_msBarang_msKategori" FromRole="msKategoriBarang" ToRole="msBarang" />
+          <NavigationProperty Name="trDonasiBarangs" Relationship="Self.FK_trDonasiBarang_msKategori" FromRole="msKategoriBarang" ToRole="trDonasiBarang" />
+        </EntityType>
+        <EntityType Name="msProvider">
+          <Key>
+            <PropertyRef Name="id_provider" />
+          </Key>
+          <Property Name="id_provider" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama_provider" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenis_provider" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="harga" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="deskripsi" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="trPencairanKuotas" Relationship="Self.FK_trPencairanKuota_msProvider" FromRole="msProvider" ToRole="trPencairanKuota" />
+        </EntityType>
+        <EntityType Name="msSekolah">
+          <Key>
+            <PropertyRef Name="id_sekolah" />
+          </Key>
+          <Property Name="id_sekolah" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama_sekolah" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="akreditasi" Type="Int32" Nullable="false" />
+          <Property Name="nama_cp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_cp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="alamat_sekolah" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="provinsi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kota" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kecamatan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="jml_penerimaKIP" Type="Int32" />
+          <Property Name="harga_spp" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="harga_seragam" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="deskripsi" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msSiswas" Relationship="Self.FK_msSiswa_msSekolah" FromRole="msSekolah" ToRole="msSiswa" />
+        </EntityType>
+        <EntityType Name="msSiswa">
+          <Key>
+            <PropertyRef Name="id_siswa" />
+          </Key>
+          <Property Name="id_siswa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nisn" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="Int32" Nullable="false" />
+          <Property Name="tempat_lahir" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tanggal_lahir" Type="DateTime" Precision="0" />
+          <Property Name="alamat" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="no_telp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomor_kip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenjang" Type="Int32" Nullable="false" />
+          <Property Name="id_sekolah" Type="Int32" Nullable="false" />
+          <Property Name="semester_awal" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="nama_ayah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pekerjaan_ayah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nama_ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pekerjaan_ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sb_kuota" Type="Int32" Nullable="false" />
+          <Property Name="sb_seragam" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dtNISNKJP" Relationship="Self.FK_msSiswa_dtNISNKJP" FromRole="msSiswa" ToRole="dtNISNKJP" />
+          <NavigationProperty Name="msSekolah" Relationship="Self.FK_msSiswa_msSekolah" FromRole="msSiswa" ToRole="msSekolah" />
+          <NavigationProperty Name="trPencairanKuotas" Relationship="Self.FK_trPencairanKuota_msSiswa" FromRole="msSiswa" ToRole="trPencairanKuota" />
+          <NavigationProperty Name="trPengajuanSeragams" Relationship="Self.FK_trPengajuanSeragam_msSiswa" FromRole="msSiswa" ToRole="trPengajuanSeragam" />
+          <NavigationProperty Name="trPengajuanSPPs" Relationship="Self.FK_trPengajuanSPP_msSiswa" FromRole="msSiswa" ToRole="trPengajuanSPP" />
+          <NavigationProperty Name="trPermintaanBarangs" Relationship="Self.FK_trPermintaanBarang_msSiswa" FromRole="msSiswa" ToRole="trPermintaanBarang" />
+        </EntityType>
+        <EntityType Name="msStaff">
+          <Key>
+            <PropertyRef Name="id_staff" />
+          </Key>
+          <Property Name="id_staff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama_staff" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="no_ktp" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="tempat_lahir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tanggal_lahir" Type="DateTime" Precision="0" />
+          <Property Name="alamat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="no_telp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="pendidikan_terakhir" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tahun_masuk" Type="DateTime" Precision="0" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="trPengajuanSeragams" Relationship="Self.FK_trPengajuanSeragam_msStaff" FromRole="msStaff" ToRole="trPengajuanSeragam" />
+          <NavigationProperty Name="trPengajuanSPPs" Relationship="Self.FK_trPengajuanSPP_msStaff" FromRole="msStaff" ToRole="trPengajuanSPP" />
+          <NavigationProperty Name="trPermintaanBarangs" Relationship="Self.FK_trPermintaanBarang_msStaff" FromRole="msStaff" ToRole="trPermintaanBarang" />
+        </EntityType>
+        <EntityType Name="trDonasiBarang">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nama_barang" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_donatur" Type="Int32" Nullable="false" />
+          <Property Name="id_kategori" Type="Int32" Nullable="false" />
+          <Property Name="kondisi" Type="Int32" Nullable="false" />
+          <Property Name="keterangan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msDonatur" Relationship="Self.FK_trDonasiBarang_msDonatur" FromRole="trDonasiBarang" ToRole="msDonatur" />
+          <NavigationProperty Name="msKategoriBarang" Relationship="Self.FK_trDonasiBarang_msKategori" FromRole="trDonasiBarang" ToRole="msKategoriBarang" />
+        </EntityType>
+        <EntityType Name="trDonasiUang">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_donatur" Type="Int32" Nullable="false" />
+          <Property Name="id_bank" Type="Int32" Nullable="false" />
+          <Property Name="total_donasi" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msBank" Relationship="Self.FK_trDonasiUang_msBank" FromRole="trDonasiUang" ToRole="msBank" />
+          <NavigationProperty Name="msDonatur" Relationship="Self.FK_trDonasiUang_msDonatur" FromRole="trDonasiUang" ToRole="msDonatur" />
+        </EntityType>
+        <EntityType Name="trPencairanKuota">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_provider" Type="Int32" Nullable="false" />
+          <Property Name="id_siswa" Type="Int32" Nullable="false" />
+          <Property Name="jml_kuota" Type="Int32" Nullable="false" />
+          <Property Name="total_biaya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msProvider" Relationship="Self.FK_trPencairanKuota_msProvider" FromRole="trPencairanKuota" ToRole="msProvider" />
+          <NavigationProperty Name="msSiswa" Relationship="Self.FK_trPencairanKuota_msSiswa" FromRole="trPencairanKuota" ToRole="msSiswa" />
+        </EntityType>
+        <EntityType Name="trPengajuanSeragam">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_siswa" Type="Int32" Nullable="false" />
+          <Property Name="id_staff" Type="Int32" />
+          <Property Name="ukuran" Type="Int32" Nullable="false" />
+          <Property Name="keterangan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="total_biaya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msSiswa" Relationship="Self.FK_trPengajuanSeragam_msSiswa" FromRole="trPengajuanSeragam" ToRole="msSiswa" />
+          <NavigationProperty Name="msStaff" Relationship="Self.FK_trPengajuanSeragam_msStaff" FromRole="trPengajuanSeragam" ToRole="msStaff" />
+        </EntityType>
+        <EntityType Name="trPengajuanSPP">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_siswa" Type="Int32" Nullable="false" />
+          <Property Name="id_staff" Type="Int32" />
+          <Property Name="jml_bulan" Type="Int32" Nullable="false" />
+          <Property Name="total_biaya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msSiswa" Relationship="Self.FK_trPengajuanSPP_msSiswa" FromRole="trPengajuanSPP" ToRole="msSiswa" />
+          <NavigationProperty Name="msStaff" Relationship="Self.FK_trPengajuanSPP_msStaff" FromRole="trPengajuanSPP" ToRole="msStaff" />
+        </EntityType>
+        <EntityType Name="trPermintaanBarang">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_siswa" Type="Int32" Nullable="false" />
+          <Property Name="id_staff" Type="Int32" />
+          <Property Name="id_barang" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msBarang" Relationship="Self.FK_trPermintaanBarang_msBarang" FromRole="trPermintaanBarang" ToRole="msBarang" />
+          <NavigationProperty Name="msSiswa" Relationship="Self.FK_trPermintaanBarang_msSiswa" FromRole="trPermintaanBarang" ToRole="msSiswa" />
+          <NavigationProperty Name="msStaff" Relationship="Self.FK_trPermintaanBarang_msStaff" FromRole="trPermintaanBarang" ToRole="msStaff" />
+        </EntityType>
+        <Association Name="FK_msSiswa_dtNISNKJP">
+          <End Role="dtNISNKJP" Type="Self.dtNISNKJP" Multiplicity="1" />
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtNISNKJP">
+              <PropertyRef Name="nisn" />
+            </Principal>
+            <Dependent Role="msSiswa">
+              <PropertyRef Name="nisn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiUang_msBank">
+          <End Role="msBank" Type="Self.msBank" Multiplicity="1" />
+          <End Role="trDonasiUang" Type="Self.trDonasiUang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msBank">
+              <PropertyRef Name="id_bank" />
+            </Principal>
+            <Dependent Role="trDonasiUang">
+              <PropertyRef Name="id_bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_msBarang_msKategori">
+          <End Role="msKategoriBarang" Type="Self.msKategoriBarang" Multiplicity="1" />
+          <End Role="msBarang" Type="Self.msBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msKategoriBarang">
+              <PropertyRef Name="id_kategori" />
+            </Principal>
+            <Dependent Role="msBarang">
+              <PropertyRef Name="id_kategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPermintaanBarang_msBarang">
+          <End Role="msBarang" Type="Self.msBarang" Multiplicity="1" />
+          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msBarang">
+              <PropertyRef Name="id_barang" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_barang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiBarang_msDonatur">
+          <End Role="msDonatur" Type="Self.msDonatur" Multiplicity="1" />
+          <End Role="trDonasiBarang" Type="Self.trDonasiBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msDonatur">
+              <PropertyRef Name="id_donatur" />
+            </Principal>
+            <Dependent Role="trDonasiBarang">
+              <PropertyRef Name="id_donatur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiUang_msDonatur">
+          <End Role="msDonatur" Type="Self.msDonatur" Multiplicity="1" />
+          <End Role="trDonasiUang" Type="Self.trDonasiUang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msDonatur">
+              <PropertyRef Name="id_donatur" />
+            </Principal>
+            <Dependent Role="trDonasiUang">
+              <PropertyRef Name="id_donatur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trDonasiBarang_msKategori">
+          <End Role="msKategoriBarang" Type="Self.msKategoriBarang" Multiplicity="1" />
+          <End Role="trDonasiBarang" Type="Self.trDonasiBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msKategoriBarang">
+              <PropertyRef Name="id_kategori" />
+            </Principal>
+            <Dependent Role="trDonasiBarang">
+              <PropertyRef Name="id_kategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPencairanKuota_msProvider">
+          <End Role="msProvider" Type="Self.msProvider" Multiplicity="1" />
+          <End Role="trPencairanKuota" Type="Self.trPencairanKuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msProvider">
+              <PropertyRef Name="id_provider" />
+            </Principal>
+            <Dependent Role="trPencairanKuota">
+              <PropertyRef Name="id_provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_msSiswa_msSekolah">
+          <End Role="msSekolah" Type="Self.msSekolah" Multiplicity="1" />
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSekolah">
+              <PropertyRef Name="id_sekolah" />
+            </Principal>
+            <Dependent Role="msSiswa">
+              <PropertyRef Name="id_sekolah" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPencairanKuota_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPencairanKuota" Type="Self.trPencairanKuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPencairanKuota">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSeragam_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPengajuanSeragam" Type="Self.trPengajuanSeragam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPengajuanSeragam">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSPP_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPengajuanSPP" Type="Self.trPengajuanSPP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPengajuanSPP">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPermintaanBarang_msSiswa">
+          <End Role="msSiswa" Type="Self.msSiswa" Multiplicity="1" />
+          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msSiswa">
+              <PropertyRef Name="id_siswa" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_siswa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSeragam_msStaff">
+          <End Role="msStaff" Type="Self.msStaff" Multiplicity="0..1" />
+          <End Role="trPengajuanSeragam" Type="Self.trPengajuanSeragam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msStaff">
+              <PropertyRef Name="id_staff" />
+            </Principal>
+            <Dependent Role="trPengajuanSeragam">
+              <PropertyRef Name="id_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPengajuanSPP_msStaff">
+          <End Role="msStaff" Type="Self.msStaff" Multiplicity="0..1" />
+          <End Role="trPengajuanSPP" Type="Self.trPengajuanSPP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msStaff">
+              <PropertyRef Name="id_staff" />
+            </Principal>
+            <Dependent Role="trPengajuanSPP">
+              <PropertyRef Name="id_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trPermintaanBarang_msStaff">
+          <End Role="msStaff" Type="Self.msStaff" Multiplicity="0..1" />
+          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msStaff">
+              <PropertyRef Name="id_staff" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="danasuraEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dtNISNKJPs" EntityType="Self.dtNISNKJP" />
+          <EntitySet Name="msBanks" EntityType="Self.msBank" />
+          <EntitySet Name="msBarangs" EntityType="Self.msBarang" />
+          <EntitySet Name="msDonaturs" EntityType="Self.msDonatur" />
+          <EntitySet Name="msKategoriBarangs" EntityType="Self.msKategoriBarang" />
+          <EntitySet Name="msProviders" EntityType="Self.msProvider" />
+          <EntitySet Name="msSekolahs" EntityType="Self.msSekolah" />
+          <EntitySet Name="msSiswas" EntityType="Self.msSiswa" />
+          <EntitySet Name="msStaffs" EntityType="Self.msStaff" />
+          <EntitySet Name="trDonasiBarangs" EntityType="Self.trDonasiBarang" />
+          <EntitySet Name="trDonasiUangs" EntityType="Self.trDonasiUang" />
+          <EntitySet Name="trPencairanKuotas" EntityType="Self.trPencairanKuota" />
+          <EntitySet Name="trPengajuanSeragams" EntityType="Self.trPengajuanSeragam" />
+          <EntitySet Name="trPengajuanSPPs" EntityType="Self.trPengajuanSPP" />
+          <EntitySet Name="trPermintaanBarangs" EntityType="Self.trPermintaanBarang" />
+          <AssociationSet Name="FK_msSiswa_dtNISNKJP" Association="Self.FK_msSiswa_dtNISNKJP">
+            <End Role="dtNISNKJP" EntitySet="dtNISNKJPs" />
+            <End Role="msSiswa" EntitySet="msSiswas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiUang_msBank" Association="Self.FK_trDonasiUang_msBank">
+            <End Role="msBank" EntitySet="msBanks" />
+            <End Role="trDonasiUang" EntitySet="trDonasiUangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_msBarang_msKategori" Association="Self.FK_msBarang_msKategori">
+            <End Role="msKategoriBarang" EntitySet="msKategoriBarangs" />
+            <End Role="msBarang" EntitySet="msBarangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msBarang" Association="Self.FK_trPermintaanBarang_msBarang">
+            <End Role="msBarang" EntitySet="msBarangs" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiBarang_msDonatur" Association="Self.FK_trDonasiBarang_msDonatur">
+            <End Role="msDonatur" EntitySet="msDonaturs" />
+            <End Role="trDonasiBarang" EntitySet="trDonasiBarangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiUang_msDonatur" Association="Self.FK_trDonasiUang_msDonatur">
+            <End Role="msDonatur" EntitySet="msDonaturs" />
+            <End Role="trDonasiUang" EntitySet="trDonasiUangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trDonasiBarang_msKategori" Association="Self.FK_trDonasiBarang_msKategori">
+            <End Role="msKategoriBarang" EntitySet="msKategoriBarangs" />
+            <End Role="trDonasiBarang" EntitySet="trDonasiBarangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPencairanKuota_msProvider" Association="Self.FK_trPencairanKuota_msProvider">
+            <End Role="msProvider" EntitySet="msProviders" />
+            <End Role="trPencairanKuota" EntitySet="trPencairanKuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_msSiswa_msSekolah" Association="Self.FK_msSiswa_msSekolah">
+            <End Role="msSekolah" EntitySet="msSekolahs" />
+            <End Role="msSiswa" EntitySet="msSiswas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPencairanKuota_msSiswa" Association="Self.FK_trPencairanKuota_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswas" />
+            <End Role="trPencairanKuota" EntitySet="trPencairanKuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSeragam_msSiswa" Association="Self.FK_trPengajuanSeragam_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswas" />
+            <End Role="trPengajuanSeragam" EntitySet="trPengajuanSeragams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSPP_msSiswa" Association="Self.FK_trPengajuanSPP_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswas" />
+            <End Role="trPengajuanSPP" EntitySet="trPengajuanSPPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msSiswa" Association="Self.FK_trPermintaanBarang_msSiswa">
+            <End Role="msSiswa" EntitySet="msSiswas" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSeragam_msStaff" Association="Self.FK_trPengajuanSeragam_msStaff">
+            <End Role="msStaff" EntitySet="msStaffs" />
+            <End Role="trPengajuanSeragam" EntitySet="trPengajuanSeragams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPengajuanSPP_msStaff" Association="Self.FK_trPengajuanSPP_msStaff">
+            <End Role="msStaff" EntitySet="msStaffs" />
+            <End Role="trPengajuanSPP" EntitySet="trPengajuanSPPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msStaff" Association="Self.FK_trPermintaanBarang_msStaff">
+            <End Role="msStaff" EntitySet="msStaffs" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarangs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="danasuraModelStoreContainer" CdmEntityContainer="danasuraEntities">
+          <EntitySetMapping Name="dtNISNKJPs">
+            <EntityTypeMapping TypeName="danasuraModel.dtNISNKJP">
+              <MappingFragment StoreEntitySet="dtNISNKJP">
+                <ScalarProperty Name="nisn" ColumnName="nisn" />
+                <ScalarProperty Name="no_kip" ColumnName="no_kip" />
+                <ScalarProperty Name="nama_siswa" ColumnName="nama_siswa" />
+                <ScalarProperty Name="jenjang" ColumnName="jenjang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msBanks">
+            <EntityTypeMapping TypeName="danasuraModel.msBank">
+              <MappingFragment StoreEntitySet="msBank">
+                <ScalarProperty Name="id_bank" ColumnName="id_bank" />
+                <ScalarProperty Name="nama_bank" ColumnName="nama_bank" />
+                <ScalarProperty Name="atas_nama" ColumnName="atas_nama" />
+                <ScalarProperty Name="no_rekening" ColumnName="no_rekening" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msBarangs">
+            <EntityTypeMapping TypeName="danasuraModel.msBarang">
+              <MappingFragment StoreEntitySet="msBarang">
+                <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="id_kategori" ColumnName="id_kategori" />
+                <ScalarProperty Name="merk" ColumnName="merk" />
+                <ScalarProperty Name="berat" ColumnName="berat" />
+                <ScalarProperty Name="kondisi" ColumnName="kondisi" />
+                <ScalarProperty Name="keterangan" ColumnName="keterangan" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msDonaturs">
+            <EntityTypeMapping TypeName="danasuraModel.msDonatur">
+              <MappingFragment StoreEntitySet="msDonatur">
+                <ScalarProperty Name="id_donatur" ColumnName="id_donatur" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="no_ktp" ColumnName="no_ktp" />
+                <ScalarProperty Name="tempat_lahir" ColumnName="tempat_lahir" />
+                <ScalarProperty Name="tanggal_lahir" ColumnName="tanggal_lahir" />
+                <ScalarProperty Name="jenis_kelamin" ColumnName="jenis_kelamin" />
+                <ScalarProperty Name="alamat" ColumnName="alamat" />
+                <ScalarProperty Name="agama" ColumnName="agama" />
+                <ScalarProperty Name="pekerjaan" ColumnName="pekerjaan" />
+                <ScalarProperty Name="kewarganegaraan" ColumnName="kewarganegaraan" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msKategoriBarangs">
+            <EntityTypeMapping TypeName="danasuraModel.msKategoriBarang">
+              <MappingFragment StoreEntitySet="msKategoriBarang">
+                <ScalarProperty Name="id_kategori" ColumnName="id_kategori" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msProviders">
+            <EntityTypeMapping TypeName="danasuraModel.msProvider">
+              <MappingFragment StoreEntitySet="msProvider">
+                <ScalarProperty Name="id_provider" ColumnName="id_provider" />
+                <ScalarProperty Name="nama_provider" ColumnName="nama_provider" />
+                <ScalarProperty Name="jenis_provider" ColumnName="jenis_provider" />
+                <ScalarProperty Name="harga" ColumnName="harga" />
+                <ScalarProperty Name="deskripsi" ColumnName="deskripsi" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msSekolahs">
+            <EntityTypeMapping TypeName="danasuraModel.msSekolah">
+              <MappingFragment StoreEntitySet="msSekolah">
+                <ScalarProperty Name="id_sekolah" ColumnName="id_sekolah" />
+                <ScalarProperty Name="nama_sekolah" ColumnName="nama_sekolah" />
+                <ScalarProperty Name="akreditasi" ColumnName="akreditasi" />
+                <ScalarProperty Name="nama_cp" ColumnName="nama_cp" />
+                <ScalarProperty Name="no_cp" ColumnName="no_cp" />
+                <ScalarProperty Name="alamat_sekolah" ColumnName="alamat_sekolah" />
+                <ScalarProperty Name="provinsi" ColumnName="provinsi" />
+                <ScalarProperty Name="kota" ColumnName="kota" />
+                <ScalarProperty Name="kecamatan" ColumnName="kecamatan" />
+                <ScalarProperty Name="jml_penerimaKIP" ColumnName="jml_penerimaKIP" />
+                <ScalarProperty Name="harga_spp" ColumnName="harga_spp" />
+                <ScalarProperty Name="harga_seragam" ColumnName="harga_seragam" />
+                <ScalarProperty Name="deskripsi" ColumnName="deskripsi" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msSiswas">
+            <EntityTypeMapping TypeName="danasuraModel.msSiswa">
+              <MappingFragment StoreEntitySet="msSiswa">
+                <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
+                <ScalarProperty Name="nisn" ColumnName="nisn" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="jenis_kelamin" ColumnName="jenis_kelamin" />
+                <ScalarProperty Name="tempat_lahir" ColumnName="tempat_lahir" />
+                <ScalarProperty Name="tanggal_lahir" ColumnName="tanggal_lahir" />
+                <ScalarProperty Name="alamat" ColumnName="alamat" />
+                <ScalarProperty Name="no_telp" ColumnName="no_telp" />
+                <ScalarProperty Name="nomor_kip" ColumnName="nomor_kip" />
+                <ScalarProperty Name="jenjang" ColumnName="jenjang" />
+                <ScalarProperty Name="id_sekolah" ColumnName="id_sekolah" />
+                <ScalarProperty Name="semester_awal" ColumnName="semester_awal" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="nama_ayah" ColumnName="nama_ayah" />
+                <ScalarProperty Name="pekerjaan_ayah" ColumnName="pekerjaan_ayah" />
+                <ScalarProperty Name="nama_ibu" ColumnName="nama_ibu" />
+                <ScalarProperty Name="pekerjaan_ibu" ColumnName="pekerjaan_ibu" />
+                <ScalarProperty Name="sb_kuota" ColumnName="sb_kuota" />
+                <ScalarProperty Name="sb_seragam" ColumnName="sb_seragam" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msStaffs">
+            <EntityTypeMapping TypeName="danasuraModel.msStaff">
+              <MappingFragment StoreEntitySet="msStaff">
+                <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+                <ScalarProperty Name="nama_staff" ColumnName="nama_staff" />
+                <ScalarProperty Name="jenis_kelamin" ColumnName="jenis_kelamin" />
+                <ScalarProperty Name="no_ktp" ColumnName="no_ktp" />
+                <ScalarProperty Name="tempat_lahir" ColumnName="tempat_lahir" />
+                <ScalarProperty Name="tanggal_lahir" ColumnName="tanggal_lahir" />
+                <ScalarProperty Name="alamat" ColumnName="alamat" />
+                <ScalarProperty Name="no_telp" ColumnName="no_telp" />
+                <ScalarProperty Name="pendidikan_terakhir" ColumnName="pendidikan_terakhir" />
+                <ScalarProperty Name="tahun_masuk" ColumnName="tahun_masuk" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trDonasiBarangs">
+            <EntityTypeMapping TypeName="danasuraModel.trDonasiBarang">
+              <MappingFragment StoreEntitySet="trDonasiBarang">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
+                <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+                <ScalarProperty Name="id_donatur" ColumnName="id_donatur" />
+                <ScalarProperty Name="id_kategori" ColumnName="id_kategori" />
+                <ScalarProperty Name="kondisi" ColumnName="kondisi" />
+                <ScalarProperty Name="keterangan" ColumnName="keterangan" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trDonasiUangs">
+            <EntityTypeMapping TypeName="danasuraModel.trDonasiUang">
+              <MappingFragment StoreEntitySet="trDonasiUang">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
+                <ScalarProperty Name="id_donatur" ColumnName="id_donatur" />
+                <ScalarProperty Name="id_bank" ColumnName="id_bank" />
+                <ScalarProperty Name="total_donasi" ColumnName="total_donasi" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trPencairanKuotas">
+            <EntityTypeMapping TypeName="danasuraModel.trPencairanKuota">
+              <MappingFragment StoreEntitySet="trPencairanKuota">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
+                <ScalarProperty Name="id_provider" ColumnName="id_provider" />
+                <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
+                <ScalarProperty Name="jml_kuota" ColumnName="jml_kuota" />
+                <ScalarProperty Name="total_biaya" ColumnName="total_biaya" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trPengajuanSeragams">
+            <EntityTypeMapping TypeName="danasuraModel.trPengajuanSeragam">
+              <MappingFragment StoreEntitySet="trPengajuanSeragam">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
+                <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
+                <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+                <ScalarProperty Name="ukuran" ColumnName="ukuran" />
+                <ScalarProperty Name="keterangan" ColumnName="keterangan" />
+                <ScalarProperty Name="total_biaya" ColumnName="total_biaya" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trPengajuanSPPs">
+            <EntityTypeMapping TypeName="danasuraModel.trPengajuanSPP">
+              <MappingFragment StoreEntitySet="trPengajuanSPP">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
+                <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
+                <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+                <ScalarProperty Name="jml_bulan" ColumnName="jml_bulan" />
+                <ScalarProperty Name="total_biaya" ColumnName="total_biaya" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trPermintaanBarangs">
+            <EntityTypeMapping TypeName="danasuraModel.trPermintaanBarang">
+              <MappingFragment StoreEntitySet="trPermintaanBarang">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
+                <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
+                <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+                <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

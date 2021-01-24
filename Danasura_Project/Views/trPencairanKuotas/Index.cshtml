@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Danasura_Project.Models.trPencairanKuota>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSiswa.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tgl_trans)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jml_kuota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_biaya)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.created_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_by)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_by)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.msProvider.nama_provider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.msSiswa.nisn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tgl_trans)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jml_kuota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_biaya)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.created_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_by)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_by)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.msProvider.nama_provider)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.msSiswa.nisn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_trans }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_trans }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_trans })
+        </td>
+    </tr>
+}
+
+</table>

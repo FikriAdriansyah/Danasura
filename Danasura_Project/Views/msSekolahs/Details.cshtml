@@ -1,0 +1,114 @@
+﻿@model Danasura_Project.Models.msSekolah
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detil Sekolah</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_sekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_sekolah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akreditasi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akreditasi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_cp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_cp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_cp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_cp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamat_sekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamat_sekolah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provinsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provinsi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kecamatan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kecamatan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jml_penerimaKIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jml_penerimaKIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.harga_spp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.harga_spp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.harga_seragam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.harga_seragam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deskripsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deskripsi)
+        </dd>
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Kembali", "Index", new { area = "" }, htmlAttributes: new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Ubah", "Edit", new { id = Model.id_sekolah }, htmlAttributes: new { @class = "btn btn-warning" })
+</p>

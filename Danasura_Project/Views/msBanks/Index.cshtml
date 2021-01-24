@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Danasura_Project.Models.msBank>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin2.cshtml";
+    var nomor = 0;
+}
+
+<h2>Data Bank</h2>
+
+<p>
+    @Html.ActionLink("Tambah Data Bank", "Create", new { area = "" }, htmlAttributes: new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nama_bank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.atas_nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.no_rekening)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.status == 1)
+        {
+            nomor++;
+            <tr>
+                <td>
+                    @nomor
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nama_bank)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.atas_nama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.no_rekening)
+                </td>
+                <td>
+                    @Html.ActionLink("Ubah", "Edit", new { id = item.id_bank }, htmlAttributes: new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Hapus", "Delete", new { id = item.id_bank }, htmlAttributes: new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

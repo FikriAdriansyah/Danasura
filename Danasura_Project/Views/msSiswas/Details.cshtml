@@ -1,0 +1,211 @@
+﻿@model Danasura_Project.Models.msSiswa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutSiswa.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>msSiswa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jenis_kelamin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jenis_kelamin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempat_lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempat_lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tanggal_lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tanggal_lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_telp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_telp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomor_kip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomor_kip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jenjang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jenjang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.semester_awal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.semester_awal)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_ayah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_ayah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pekerjaan_ayah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pekerjaan_ayah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_ibu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_ibu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pekerjaan_ibu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pekerjaan_ibu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sb_kuota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sb_kuota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sb_seragam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sb_seragam)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.created_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_by)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.dtNISNKJP.no_kip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtNISNKJP.no_kip)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.msSekolah.nama_sekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.msSekolah.nama_sekolah)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_siswa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

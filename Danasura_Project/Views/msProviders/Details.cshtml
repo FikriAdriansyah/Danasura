@@ -1,0 +1,50 @@
+﻿@model Danasura_Project.Models.msProvider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detil Provider</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jenis_provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jenis_provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.harga)
+        </dt>
+
+        <dd>
+            Rp. @Html.DisplayFor(model => model.harga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deskripsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deskripsi)
+        </dd>
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Kembali", "Index", new { area = "" }, htmlAttributes: new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Ubah", "Edit", new { id = Model.id_provider }, htmlAttributes: new { @class = "btn btn-warning" })
+</p>

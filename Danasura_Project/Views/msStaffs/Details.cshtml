@@ -1,0 +1,155 @@
+﻿@model Danasura_Project.Models.msStaff
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>msStaff</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_staff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_staff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jenis_kelamin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jenis_kelamin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_ktp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_ktp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempat_lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempat_lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tanggal_lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tanggal_lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_telp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_telp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pendidikan_terakhir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pendidikan_terakhir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tahun_masuk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tahun_masuk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_by)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_staff }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

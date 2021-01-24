@@ -1,0 +1,56 @@
+﻿@model Danasura_Project.Models.msProvider
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Hapus Data Provider</h2>
+
+<h3>Apakah kamu yakin ingin menghapus data ini ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama_provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama_provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jenis_provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jenis_provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.harga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.harga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deskripsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deskripsi)
+        </dd>
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Kembali", "Index", new { area = "" }, htmlAttributes: new { @class = "btn btn-default" }) |
+            <input type="submit" value="Hapus" class="btn btn-danger" />
+        </div>
+    }
+</div>
