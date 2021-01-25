@@ -6,52 +6,69 @@
     var nomor = 0;
 }
 
+<link href="~/Content/DataTables/datatables.css" rel="stylesheet" />
+
+@section scripts{
+    <script src="~/Content/DataTables/datatablesjs.js"></script>
+
+    <script>
+            var Popup, dataTable;
+            var no;
+            $(document).ready(function () {
+                dataTable = $("#tabelProvider").DataTable();
+            });
+    </script>
+}
+
 <h2>Data Provider</h2>
 
 <p>
     @Html.ActionLink("Tambah Data Provider", "Create", new { area = "" }, htmlAttributes: new { @class = "btn btn-success" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            No.
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nama_provider)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jenis_provider)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.harga)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    if (item.status == 1)
-    {
-        nomor++;
+<table class="table" id="tabelProvider">
+    <thead>
         <tr>
-            <td>
-                @nomor
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nama_provider)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jenis_provider)
-            </td>
-            <td>
-                Rp. @Html.DisplayFor(modelItem => item.harga)
-            </td>
-            <td>
-                @Html.ActionLink("Ubah", "Edit", new { id = item.id_provider }, htmlAttributes: new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("Details", "Details", new { id=item.id_provider }, htmlAttributes: new { @class = "btn btn-default" }) |
-                @Html.ActionLink("Hapus", "Delete", new { id = item.id_provider }, htmlAttributes: new { @class = "btn btn-danger" })
-            </td>
+            <th>
+                No.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nama_provider)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jenis_provider)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.harga)
+            </th>
+            <th></th>
         </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        if (item.status == 1)
+        {
+            nomor++;
+            <tr>
+                <td>
+                    @nomor
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nama_provider)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jenis_provider)
+                </td>
+                <td>
+                    Rp. @Html.DisplayFor(modelItem => item.harga)
+                </td>
+                <td>
+                    @Html.ActionLink("Ubah", "Edit", new { id = item.id_provider }, htmlAttributes: new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id_provider }, htmlAttributes: new { @class = "btn btn-default" }) |
+                    @Html.ActionLink("Hapus", "Delete", new { id = item.id_provider }, htmlAttributes: new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
     }
-}
 
 </table>
