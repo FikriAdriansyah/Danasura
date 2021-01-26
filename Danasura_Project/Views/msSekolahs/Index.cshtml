@@ -11,65 +11,84 @@
 <p>
     @Html.ActionLink("Tambah Data Sekolah", "Create", new { area = "" }, htmlAttributes: new { @class = "btn btn-success" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            No.
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nama_sekolah)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.akreditasi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.alamat_sekolah)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provinsi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.kota)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.kecamatan)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    if (item.status == 1)
-    {
-        nomor++;
+<table class="table" id="tabelSekolah">
+    <thead>
         <tr>
-            <td>
-                @nomor
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nama_sekolah)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.akreditasi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.alamat_sekolah)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.provinsi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.kota)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.kecamatan)
-            </td>
-            <td>
-                @Html.ActionLink("Ubah", "Edit", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-default" }) |
-                @Html.ActionLink("Hapus", "Delete", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-danger" })
-            </td>
+            <th>
+                No.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nama_sekolah)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.akreditasi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alamat_sekolah)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.provinsi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kecamatan)
+            </th>
+            <th></th>
         </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        if (item.status == 1)
+        {
+            nomor++;
+            <tr>
+                <td>
+                    @nomor
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nama_sekolah)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.akreditasi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.alamat_sekolah)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.provinsi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kecamatan)
+                </td>
+                <td>
+                    @Html.ActionLink("Ubah", "Edit", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-default" }) |
+                    @Html.ActionLink("Hapus", "Delete", new { id = item.id_sekolah }, htmlAttributes: new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
     }
-}
 
 </table>
+
+<link href="~/Content/DataTables/datatables.css" rel="stylesheet" />
+@*<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />*@
+
+@section scripts{
+    <script src="~/Content/DataTables/datatablesjs.js"></script>
+    @*<script src="https://cdn.datatables.net/1.10.15/js/datatables.bootstrap.min.js"></script>*@
+
+    <script>
+        var Popup, dataTable;
+        var no;
+        $(document).ready(function () {
+            dataTable = $("#tabelSekolah").DataTable();
+        });
+    </script>
+}

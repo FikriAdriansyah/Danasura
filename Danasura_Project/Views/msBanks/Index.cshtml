@@ -11,22 +11,24 @@
 <p>
     @Html.ActionLink("Tambah Data Bank", "Create", new { area = "" }, htmlAttributes: new { @class = "btn btn-success" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            No.
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nama_bank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.atas_nama)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.no_rekening)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="tabelBank">
+    <thead>
+        <tr>
+            <th>
+                No.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nama_bank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.atas_nama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.no_rekening)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
     @foreach (var item in Model)
     {
@@ -55,3 +57,19 @@
     }
 
 </table>
+
+<link href="~/Content/DataTables/datatables.css" rel="stylesheet" />
+@*<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />*@
+
+@section scripts{
+    <script src="~/Content/DataTables/datatablesjs.js"></script>
+    @*<script src="https://cdn.datatables.net/1.10.15/js/datatables.bootstrap.min.js"></script>*@
+
+    <script>
+        var Popup, dataTable;
+        var no;
+        $(document).ready(function () {
+            dataTable = $("#tabelBank").DataTable();
+        });
+    </script>
+}
