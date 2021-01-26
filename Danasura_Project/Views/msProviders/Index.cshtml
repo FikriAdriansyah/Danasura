@@ -6,20 +6,6 @@
     var nomor = 0;
 }
 
-<link href="~/Content/DataTables/datatables.css" rel="stylesheet" />
-
-@section scripts{
-    <script src="~/Content/DataTables/datatablesjs.js"></script>
-
-    <script>
-            var Popup, dataTable;
-            var no;
-            $(document).ready(function () {
-                dataTable = $("#tabelProvider").DataTable();
-            });
-    </script>
-}
-
 <h2>Data Provider</h2>
 
 <p>
@@ -72,3 +58,18 @@
     }
 
 </table>
+
+<link href="~/Content/DataTables/datatables.css" rel="stylesheet" />
+
+@section scripts{
+    <script src="~/Content/DataTables/datatablesjs.js"></script>
+
+    <script>
+        var Popup, dataTable;
+        var no;
+        $(document).ready(function () {
+            dataTable = $("#tabelProvider").DataTable();
+        });
+    </script>
+}
+
