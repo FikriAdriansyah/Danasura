@@ -19,7 +19,7 @@ namespace Danasura_Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LoginDonatur(msDonatur donatur)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (danasuraEntities db = new danasuraEntities())
                 {
@@ -49,7 +49,7 @@ namespace Danasura_Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LoginSiswa(msSiswa siswa)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (danasuraEntities db = new danasuraEntities())
                 {
@@ -80,7 +80,7 @@ namespace Danasura_Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LoginStaff(msStaff staff)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (danasuraEntities db = new danasuraEntities())
                 {

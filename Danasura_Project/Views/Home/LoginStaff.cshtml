@@ -2,49 +2,34 @@
 
 @{
     ViewBag.Title = "LoginStaff";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<h2>Login sebagai Staff</h2>
-@using (Html.BeginForm("LoginStaff", "Home", FormMethod.Post))
-{
+<form class="user" method="post" action="@Url.Action("LoginStaff", "Home")">
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    if (@ViewBag.Messages != null)
-    {
-        <div>
-            @ViewBag.Message
-        </div>
-    }
-    <div class="form-horizontal">
 
+    <center>
         <div class="form-group">
-            @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control form-control-user", @placeholder = "Masukkan username disini ..." } })
                 @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control form-control-user", @type = "password", @placeholder = "Masukkan password disini ..." } })
                 @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Masuk" class="btn btn-primary" />
-            </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Masuk" class="btn btn-primary btn-user btn-block" />
         </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                <p>Belum punya akun ? <a onclick="location.href='@Url.Action("Create", "msStaffs")'">Klik disini</a></p>
-            </div>
-        </div>
-
-    </div>
-}
-
+    </center>
+    <hr>
+</form>
+<hr>
+<div class="text-center">
+    <p class="small">Belum punya akun ? <a style="color:royalblue" href="@Url.Action("Create", "msStaffs")">Klik disini</a></p>
+</div>

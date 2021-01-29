@@ -46,12 +46,15 @@
 
 </table>
 
-<link href="~/Content/DataTables/datatables.css" rel="stylesheet" />
-@*<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />*@
+<link href="~/Content/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 @section scripts{
-    <script src="~/Content/DataTables/datatablesjs.js"></script>
-    @*<script src="https://cdn.datatables.net/1.10.15/js/datatables.bootstrap.min.js"></script>*@
+    <!-- Page level plugins -->
+    <script src="~/Content/Assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Content/Assets/js/demo/datatables-demo.js"></script>
 
     <script>
         var Popup, dataTable;

@@ -2196,6 +2196,7 @@
     <Content Include="Views\Shared\_LayoutSiswa.cshtml" />
     <Content Include="Views\Home\LoginStaff.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin2.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
