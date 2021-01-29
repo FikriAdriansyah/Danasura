@@ -11,25 +11,14 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class trPermintaanBarang
     {
         public int id_trans { get; set; }
-
-        [DisplayName("Tanggal Transaksi")]
         public System.DateTime tgl_trans { get; set; }
-
-        [DisplayName("Pilih nama siswa")]
         public int id_siswa { get; set; }
-
-
         public Nullable<int> id_staff { get; set; }
-
-        [DisplayName("Pilih barang")]
         public int id_barang { get; set; }
-
-
         public int status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }

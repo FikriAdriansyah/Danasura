@@ -11,28 +11,14 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class trDonasiUang
     {
         public int id_trans { get; set; }
-
-        [DisplayName("Tanggal Transaksi")]
         public System.DateTime tgl_trans { get; set; }
-
-        [DisplayName("Pilih Donatur")]
         public int id_donatur { get; set; }
-
-        [DisplayName("Pilih Bank")]
         public int id_bank { get; set; }
-
-        [DisplayName("Total Donasi")]
-        [Required(ErrorMessage = "Total Donasi harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public decimal total_donasi { get; set; }
-
-
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }

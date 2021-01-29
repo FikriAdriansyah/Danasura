@@ -11,9 +11,7 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class msStaff
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,56 +23,18 @@ namespace Danasura_Project.Models
         }
     
         public int id_staff { get; set; }
-
-        [DisplayName("Nama Staff")]
-        [Required(ErrorMessage = "Nama Staff harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama_staff { get; set; }
-
-        [DisplayName("Jenis Kelamin")]
         public string jenis_kelamin { get; set; }
-
-        [DisplayName("No. KTP")]
-        [Required(ErrorMessage = "No. KTP harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public string no_ktp { get; set; }
-
-        [DisplayName("Tempat Lahir")]
-        [Required(ErrorMessage = "Tempat Lahir harus diisi.")]
         public string tempat_lahir { get; set; }
-
-        [DisplayName("Tanggal Lahir")]
-        [Required(ErrorMessage = "Tanggal Lahir harus diisi.")]
         public Nullable<System.DateTime> tanggal_lahir { get; set; }
-
-        [DisplayName("Alamat")]
-        [Required(ErrorMessage = "Alamat harus diisi.")]
         public string alamat { get; set; }
-
-        [DisplayName("No. Telp")]
-        [Required(ErrorMessage = "No. Telp harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public string no_telp { get; set; }
-
-        [DisplayName("Pendidikan Terakhir")]
-        [Required(ErrorMessage = "Pendidikan Terakhir harus diisi.")]
         public string pendidikan_terakhir { get; set; }
-
-        [DisplayName("Tahun Masuk")]
         public Nullable<System.DateTime> tahun_masuk { get; set; }
-
-        [DisplayName("Username")]
-        [Required(ErrorMessage = "Username harus diisi.")]
         public string username { get; set; }
-
-        [DisplayName("Password")]
-        [Required(ErrorMessage = "Password harus diisi.")]
         public string password { get; set; }
-
-        [DisplayName("Jabatan")]
         public int role { get; set; }
-
-
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }

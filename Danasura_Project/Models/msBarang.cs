@@ -11,9 +11,7 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class msBarang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,40 +21,19 @@ namespace Danasura_Project.Models
         }
     
         public int id_barang { get; set; }
-
-        [DisplayName("Nama Barang")]
-        [Required(ErrorMessage = "Nama Barang harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama { get; set; }
-
-        [DisplayName("Kategori")]
         public int id_kategori { get; set; }
-
-        [DisplayName("Merk")]
-        [Required(ErrorMessage = "Merk harus diisi.")]
         public string merk { get; set; }
-
-        [DisplayName("Berat")]
-        [Required(ErrorMessage = "Berat harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public Nullable<int> berat { get; set; }
-
-        [DisplayName("Kondisi")]
         public int kondisi { get; set; }
-
-        [DisplayName("Keterangan")]
-        [Required(ErrorMessage = "Keterangan harus diisi.")]
         public string keterangan { get; set; }
-
         public int status { get; set; }
-
         public Nullable<System.DateTime> created_date { get; set; }
-
         public string created_by { get; set; }
-
         public Nullable<System.DateTime> modified_date { get; set; }
-
         public string modified_by { get; set; }
+        public string foto_barang { get; set; }
+        public Nullable<int> kuantitas { get; set; }
     
         public virtual msKategoriBarang msKategoriBarang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

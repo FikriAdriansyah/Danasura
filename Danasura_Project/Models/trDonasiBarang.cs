@@ -11,40 +11,23 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class trDonasiBarang
     {
         public int id_trans { get; set; }
-
-        [DisplayName("Tanggal Transaksi")]
         public System.DateTime tgl_trans { get; set; }
-
-        [DisplayName("Nama Barang")]
-        [Required(ErrorMessage = "Nama Barang harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama_barang { get; set; }
-
-        [DisplayName("Pilih Donatur")]
         public int id_donatur { get; set; }
-
-        [DisplayName("Pilih Kategori")]
         public int id_kategori { get; set; }
-
-        [DisplayName("Kondisi")]
         public int kondisi { get; set; }
-
-        [DisplayName("Keterangan")]
-        [Required(ErrorMessage = "Keterangan harus diisi.")]
         public string keterangan { get; set; }
-
-
         public int status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }
         public Nullable<System.DateTime> modified_date { get; set; }
         public string modified_by { get; set; }
+        public string foto_barang { get; set; }
+        public Nullable<int> kuantitas { get; set; }
     
         public virtual msDonatur msDonatur { get; set; }
         public virtual msKategoriBarang msKategoriBarang { get; set; }

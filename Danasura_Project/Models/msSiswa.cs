@@ -11,9 +11,7 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class msSiswa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,84 +24,26 @@ namespace Danasura_Project.Models
         }
     
         public int id_siswa { get; set; }
-
-        [DisplayName("NISN")]
-        [Required(ErrorMessage = "NISN harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public string nisn { get; set; }
-
-        [DisplayName("Nama Siswa")]
-        [Required(ErrorMessage = "Nama Siswa harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama { get; set; }
-
-        [DisplayName("Jenis Kelamin")]
         public int jenis_kelamin { get; set; }
-
-        [DisplayName("Tempat Lahir")]
-        [Required(ErrorMessage = "Tempat Lahir harus diisi.")]
         public string tempat_lahir { get; set; }
-
-        [DisplayName("Tanggal Lahir")]
         public Nullable<System.DateTime> tanggal_lahir { get; set; }
-
-        [DisplayName("Alamat")]
-        [Required(ErrorMessage = "Alamat harus diisi.")]
         public string alamat { get; set; }
-
-        [DisplayName("No. Telp")]
-        [Required(ErrorMessage = "No. Telp harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public string no_telp { get; set; }
-
-        [DisplayName("No. KIP")]
-        [Required(ErrorMessage = "No. KIP harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public string nomor_kip { get; set; }
-
-        [DisplayName("Pilih Jenjang")]
         public int jenjang { get; set; }
-
-        [DisplayName("Pilih Sekolah")]
         public int id_sekolah { get; set; }
-
-        [DisplayName("Semester Awal")]
         public Nullable<System.DateTime> semester_awal { get; set; }
-
         public Nullable<int> status { get; set; }
-
-        [DisplayName("Nama Ayah")]
-        [Required(ErrorMessage = "Nama Ayah harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama_ayah { get; set; }
-
-        [DisplayName("Pekerjaan Ayah")]
-        [Required(ErrorMessage = "Pekerjaan Ayah harus diisi.")]
         public string pekerjaan_ayah { get; set; }
-
-        [DisplayName("Nama Ibu")]
-        [Required(ErrorMessage = "Nama Ibu harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama_ibu { get; set; }
-
-        [DisplayName("Pekerjaan Ibu")]
-        [Required(ErrorMessage = "Pekerjaan Ibu harus diisi.")]
         public string pekerjaan_ibu { get; set; }
-
-        [DisplayName("Sisa Bantuan Kuota")]
         public int sb_kuota { get; set; }
-
-        [DisplayName("Sisa Bantuan Seragam")]
         public int sb_seragam { get; set; }
-
-        [DisplayName("Username")]
-        [Required(ErrorMessage = "Username harus diisi.")]
         public string username { get; set; }
-
-        [DisplayName("Password")]
-        [Required(ErrorMessage = "Password harus diisi.")]
         public string password { get; set; }
-
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }
         public Nullable<System.DateTime> modified_date { get; set; }

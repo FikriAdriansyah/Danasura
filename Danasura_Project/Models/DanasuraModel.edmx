@@ -37,6 +37,8 @@
           <Property Name="id_kategori" Type="int" Nullable="false" />
           <Property Name="merk" Type="varchar" MaxLength="100" />
           <Property Name="berat" Type="int" />
+          <Property Name="foto_barang" Type="varchar(max)" />
+          <Property Name="kuantitas" Type="int" />
           <Property Name="kondisi" Type="int" Nullable="false" />
           <Property Name="keterangan" Type="varchar" MaxLength="500" />
           <Property Name="status" Type="int" Nullable="false" />
@@ -177,6 +179,8 @@
           <Property Name="nama_barang" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="id_donatur" Type="int" Nullable="false" />
           <Property Name="id_kategori" Type="int" Nullable="false" />
+          <Property Name="foto_barang" Type="varchar(max)" />
+          <Property Name="kuantitas" Type="int" />
           <Property Name="kondisi" Type="int" Nullable="false" />
           <Property Name="keterangan" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
@@ -584,6 +588,8 @@
           <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="msKategoriBarang" Relationship="Self.FK_msBarang_msKategori" FromRole="msBarang" ToRole="msKategoriBarang" />
           <NavigationProperty Name="trPermintaanBarangs" Relationship="Self.FK_trPermintaanBarang_msBarang" FromRole="msBarang" ToRole="trPermintaanBarang" />
+          <Property Name="foto_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="kuantitas" Type="Int32" />
         </EntityType>
         <EntityType Name="msDonatur">
           <Key>
@@ -741,6 +747,8 @@
           <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="msDonatur" Relationship="Self.FK_trDonasiBarang_msDonatur" FromRole="trDonasiBarang" ToRole="msDonatur" />
           <NavigationProperty Name="msKategoriBarang" Relationship="Self.FK_trDonasiBarang_msKategori" FromRole="trDonasiBarang" ToRole="msKategoriBarang" />
+          <Property Name="foto_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="kuantitas" Type="Int32" />
         </EntityType>
         <EntityType Name="trDonasiUang">
           <Key>
@@ -1139,6 +1147,8 @@
           <EntitySetMapping Name="msBarangs">
             <EntityTypeMapping TypeName="danasuraModel.msBarang">
               <MappingFragment StoreEntitySet="msBarang">
+                <ScalarProperty Name="kuantitas" ColumnName="kuantitas" />
+                <ScalarProperty Name="foto_barang" ColumnName="foto_barang" />
                 <ScalarProperty Name="id_barang" ColumnName="id_barang" />
                 <ScalarProperty Name="nama" ColumnName="nama" />
                 <ScalarProperty Name="id_kategori" ColumnName="id_kategori" />
@@ -1286,6 +1296,8 @@
           <EntitySetMapping Name="trDonasiBarangs">
             <EntityTypeMapping TypeName="danasuraModel.trDonasiBarang">
               <MappingFragment StoreEntitySet="trDonasiBarang">
+                <ScalarProperty Name="kuantitas" ColumnName="kuantitas" />
+                <ScalarProperty Name="foto_barang" ColumnName="foto_barang" />
                 <ScalarProperty Name="id_trans" ColumnName="id_trans" />
                 <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
                 <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />

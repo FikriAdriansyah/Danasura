@@ -11,35 +11,15 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class trPencairanKuota
     {
         public int id_trans { get; set; }
-
-        [DisplayName("Tanggal Transaksi")]
         public System.DateTime tgl_trans { get; set; }
-
-        [DisplayName("Provider")]
         public int id_provider { get; set; }
-
-
-        [DisplayName("Nama Siswa")]
         public int id_siswa { get; set; }
-
-
-        [DisplayName("Jumlah Kuota")]
-        [Required(ErrorMessage = "Jumlah Kuota harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public int jml_kuota { get; set; }
-
-        [DisplayName("Total Biaya")]
-        [Required(ErrorMessage = "Total Biaya harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Hanya menerima inputan angka")]
         public decimal total_biaya { get; set; }
-
-
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }

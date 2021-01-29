@@ -11,9 +11,7 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class msDonatur
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,55 +22,18 @@ namespace Danasura_Project.Models
         }
     
         public int id_donatur { get; set; }
-
-        [DisplayName("Nama Donatur")]
-        [Required(ErrorMessage = "Nama Donatur harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama { get; set; }
-
-        [DisplayName("No. KTP")]
-        [Required(ErrorMessage = "No. KTP harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "No. KTP hanya menerima inputan angka")]
         public string no_ktp { get; set; }
-
-        [DisplayName("Tempat Lahir")]
-        [Required(ErrorMessage = "Tempat Lahir harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string tempat_lahir { get; set; }
-
-        [DisplayName("Tanggal Lahir")]
         public System.DateTime tanggal_lahir { get; set; }
-
-        [DisplayName("Jenis Kelamin")]
         public int jenis_kelamin { get; set; }
-
-        [DisplayName("Alamat")]
-        [Required(ErrorMessage = "Alamat harus diisi.")]
         public string alamat { get; set; }
-
-        [DisplayName("Agama")]
         public int agama { get; set; }
-
-        [DisplayName("Pekerjaan")]
-        [Required(ErrorMessage = "Pekerjaan harus diisi.")]
         public string pekerjaan { get; set; }
-
-        [DisplayName("Kewarganegaraan")]
         public int kewarganegaraan { get; set; }
-
-        [DisplayName("Username")]
-        [Required(ErrorMessage = "Username harus diisi.")]
         public string username { get; set; }
-
-        [DisplayName("Password")]
-        [Required(ErrorMessage = "Password harus diisi.")]
         public string password { get; set; }
-
-        [DisplayName("Email")]
-        [Required(ErrorMessage = "Email is Required")]
-        [EmailAddress(ErrorMessage = "Email tidak valid")]
         public string email { get; set; }
-
         public Nullable<System.DateTime> created_date { get; set; }
         public Nullable<System.DateTime> modified_date { get; set; }
     

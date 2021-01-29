@@ -11,9 +11,7 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class msBank
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,26 +21,10 @@ namespace Danasura_Project.Models
         }
     
         public int id_bank { get; set; }
-
-        [DisplayName("Nama Bank")]
-        [Required(ErrorMessage = "Nama Bank harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama_bank { get; set; }
-
-        [DisplayName("Pemilik Rekening")]
-        [Required(ErrorMessage = "Pemilik Rekening harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Nama Pemilik Rekening tidak bisa menggunakan angka")]
         public string atas_nama { get; set; }
-
-        [DisplayName("No. Rekening")]
-        [Required(ErrorMessage = "No. Rekening harus diisi.")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "No. Rekening hanya menerima inputan angka")]
         public string no_rekening { get; set; }
-
-
         public Nullable<int> status { get; set; }
-
-
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }
         public Nullable<System.DateTime> modified_date { get; set; }

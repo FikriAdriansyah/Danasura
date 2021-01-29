@@ -11,8 +11,6 @@ namespace Danasura_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class msKategoriBarang
     {
@@ -24,11 +22,6 @@ namespace Danasura_Project.Models
         }
     
         public int id_kategori { get; set; }
-
-
-        [DisplayName("Nama Kategori")]
-        [Required(ErrorMessage = "Nama Kategori harus diisi.")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Hanya menerima inputan huruf")]
         public string nama { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
