@@ -211,6 +211,7 @@
   <ItemGroup>
     <Content Include="Content\Assets\css\sb-admin-2.css" />
     <Content Include="Content\Assets\css\sb-admin-2.min.css" />
+    <Content Include="Content\Assets\img\andrew-moca-olmY3NkTY_M-unsplash.jpg" />
     <Content Include="Content\Assets\img\undraw_posting_photo.svg" />
     <Content Include="Content\Assets\img\undraw_profile.svg" />
     <Content Include="Content\Assets\img\undraw_profile_1.svg" />
@@ -2197,6 +2198,7 @@
     <Content Include="Views\Home\LoginStaff.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin2.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Shared\_LayoutDonatur2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "_LayoutAdmin2";
+    ViewBag.Title = "_LayoutDonatur2";
 }
 
 <!DOCTYPE html>
@@ -65,48 +65,34 @@
             <!-- isi menu dari master -->
 
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("Index", "msBanks")">
+                <a class="nav-link" href="@Url.Action("Create", "trDonasiUangs")">
                     <i class="fas fa-university"></i>
-                    <span>&nbsp;Bank</span>
+                    <span>Donasi Uang</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("Index", "msKategoriBarangs")">
+                <a class="nav-link" href="@Url.Action("Create", "msBarangs")">
                     <i class="fas fa-box-open"></i>
-                    <span>Kategori Barang</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("Index", "msProviders")">
-                    <i class="fas fa-sd-card"></i>
-                    <span>&nbsp;&nbsp;Provider</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("Index", "msSekolahs")">
-                    <i class="fas fa-school"></i>
-                    <span>Sekolah</span>
+                    <span>Donasi Barang</span>
                 </a>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             @*<li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Components</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
-                </div>
-            </div>
-        </li>*@
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                       aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Components</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Custom Components:</h6>
+                            <a class="collapse-item" href="buttons.html">Buttons</a>
+                            <a class="collapse-item" href="cards.html">Cards</a>
+                        </div>
+                    </div>
+                </li>*@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -172,21 +158,21 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     @*<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>*@
+                            <i class="fa fa-bars"></i>
+                        </button>*@
 
                     <!-- Topbar Search -->
                     @*<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                   aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>*@
+                        </form>*@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -220,11 +206,11 @@
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>-->
-                                <!-- Counter - Alerts -->
-                                <!--<span class="badge badge-danger badge-counter">3+</span>
-                            </a>-->
-                            <!-- Dropdown - Alerts -->
-                            <!--<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        <!-- Counter - Alerts -->
+                        <!--<span class="badge badge-danger badge-counter">3+</span>
+                        </a>-->
+                        <!-- Dropdown - Alerts -->
+                        <!--<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
@@ -265,17 +251,16 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
                         </li>-->
-
                         <!-- Nav Item - Messages -->
                         <!--<li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>-->
-                                <!-- Counter - Messages -->
-                                <!--<span class="badge badge-danger badge-counter">7</span>
-                            </a>-->
-                            <!-- Dropdown - Messages -->
-                            <!--<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        <!-- Counter - Messages -->
+                        <!--<span class="badge badge-danger badge-counter">7</span>
+                        </a>-->
+                        <!-- Dropdown - Messages -->
+                        <!--<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
@@ -346,19 +331,19 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@Session["nama"].ToString()</span>
                                 <img class="img-profile rounded-circle"
                                      src="~/Content/Assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="@Url.Action("Details", "msStaffs")">
+                                <a class="dropdown-item" href="@Url.Action("Details", "msDonaturs")">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profil
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="@Url.Action("LoginStaff", "Home")" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="@Url.Action("LoginDonatur", "Home")" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Keluar
                                 </a>
@@ -431,7 +416,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Content/Assets/js/sb-admin-2.min.js"></script>
-    @RenderSection("scripts")
 </body>
 
 </html>
