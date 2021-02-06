@@ -23,7 +23,6 @@
         <AssociationConnector Association="danasuraModel.FK_msSiswa_dtNISNKJP" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_trDonasiUang_msBank" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_msBarang_msKategori" ManuallyRouted="false" />
-        <AssociationConnector Association="danasuraModel.FK_trPermintaanBarang_msBarang" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_trDonasiBarang_msDonatur" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_trDonasiUang_msDonatur" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_trDonasiBarang_msKategori" ManuallyRouted="false" />
@@ -36,6 +35,7 @@
         <AssociationConnector Association="danasuraModel.FK_trPengajuanSeragam_msStaff" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_trPengajuanSPP_msStaff" ManuallyRouted="false" />
         <AssociationConnector Association="danasuraModel.FK_trPermintaanBarang_msStaff" ManuallyRouted="false" />
+        <AssociationConnector Association="danasuraModel.FK_trPermintaanBarang_msKategoriBarang" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

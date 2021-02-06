@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\Perkuliahan\Semester_3\Pemrograman 4\Projek\terbaru lagi\3\Danasura_Project\Danasura_Project\Models\DanasuraModel.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\Perkuliahan\Semester_3\Pemrograman 4\Projek\terbaru lagi\danasura Perubahan 9\Danasura_Project\Danasura_Project\Models\DanasuraModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -18,15 +18,19 @@ namespace Danasura_Project.Models
         public System.DateTime tgl_trans { get; set; }
         public int id_siswa { get; set; }
         public Nullable<int> id_staff { get; set; }
-        public int id_barang { get; set; }
         public int status { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string created_by { get; set; }
         public Nullable<System.DateTime> modified_date { get; set; }
         public string modified_by { get; set; }
+        public Nullable<int> id_kategori { get; set; }
+        public string alamat { get; set; }
+        public string keterangan { get; set; }
+        public string no_resi { get; set; }
+        public Nullable<int> kuantitas { get; set; }
     
-        public virtual msBarang msBarang { get; set; }
         public virtual msSiswa msSiswa { get; set; }
         public virtual msStaff msStaff { get; set; }
+        public virtual msKategoriBarang msKategoriBarang { get; set; }
     }
 }

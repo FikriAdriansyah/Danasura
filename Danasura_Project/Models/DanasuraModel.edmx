@@ -19,9 +19,9 @@
             <PropertyRef Name="id_bank" />
           </Key>
           <Property Name="id_bank" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama_bank" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="atas_nama" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="no_rekening" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nama_bank" Type="varchar(max)" Nullable="false" />
+          <Property Name="atas_nama" Type="varchar(max)" Nullable="false" />
+          <Property Name="no_rekening" Type="varchar(max)" Nullable="false" />
           <Property Name="status" Type="int" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -33,14 +33,13 @@
             <PropertyRef Name="id_barang" />
           </Key>
           <Property Name="id_barang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="id_kategori" Type="int" Nullable="false" />
-          <Property Name="merk" Type="varchar" MaxLength="100" />
+          <Property Name="merk" Type="varchar(max)" />
           <Property Name="berat" Type="int" />
           <Property Name="foto_barang" Type="varchar(max)" />
           <Property Name="kuantitas" Type="int" />
           <Property Name="kondisi" Type="int" Nullable="false" />
-          <Property Name="keterangan" Type="varchar" MaxLength="500" />
+          <Property Name="keterangan" Type="varchar(max)" />
           <Property Name="status" Type="int" Nullable="false" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -52,18 +51,18 @@
             <PropertyRef Name="id_donatur" />
           </Key>
           <Property Name="id_donatur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="no_ktp" Type="varchar" MaxLength="16" />
-          <Property Name="tempat_lahir" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nama" Type="varchar(max)" Nullable="false" />
+          <Property Name="no_ktp" Type="varchar(max)" />
+          <Property Name="tempat_lahir" Type="varchar(max)" Nullable="false" />
           <Property Name="tanggal_lahir" Type="date" Nullable="false" />
           <Property Name="jenis_kelamin" Type="int" Nullable="false" />
-          <Property Name="alamat" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="alamat" Type="varchar(max)" Nullable="false" />
           <Property Name="agama" Type="int" Nullable="false" />
-          <Property Name="pekerjaan" Type="varchar" MaxLength="100" />
+          <Property Name="pekerjaan" Type="varchar(max)" />
           <Property Name="kewarganegaraan" Type="int" Nullable="false" />
-          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="password" Type="varchar(max)" Nullable="false" />
+          <Property Name="email" Type="varchar(max)" Nullable="false" />
           <Property Name="created_date" Type="date" />
           <Property Name="modified_date" Type="date" />
         </EntityType>
@@ -72,7 +71,7 @@
             <PropertyRef Name="id_kategori" />
           </Key>
           <Property Name="id_kategori" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nama" Type="varchar(max)" Nullable="false" />
           <Property Name="status" Type="int" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -84,10 +83,10 @@
             <PropertyRef Name="id_provider" />
           </Key>
           <Property Name="id_provider" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama_provider" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="jenis_provider" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nama_provider" Type="varchar(max)" Nullable="false" />
+          <Property Name="jenis_provider" Type="varchar(max)" Nullable="false" />
           <Property Name="harga" Type="money" Nullable="false" />
-          <Property Name="deskripsi" Type="varchar" MaxLength="500" />
+          <Property Name="deskripsi" Type="varchar(max)" />
           <Property Name="status" Type="int" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -99,18 +98,18 @@
             <PropertyRef Name="id_sekolah" />
           </Key>
           <Property Name="id_sekolah" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama_sekolah" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nama_sekolah" Type="varchar(max)" Nullable="false" />
           <Property Name="akreditasi" Type="int" Nullable="false" />
-          <Property Name="nama_cp" Type="varchar" MaxLength="50" />
-          <Property Name="no_cp" Type="varchar" MaxLength="13" />
-          <Property Name="alamat_sekolah" Type="varchar" MaxLength="200" />
-          <Property Name="provinsi" Type="varchar" MaxLength="100" />
-          <Property Name="kota" Type="varchar" MaxLength="100" />
-          <Property Name="kecamatan" Type="varchar" MaxLength="100" />
+          <Property Name="nama_cp" Type="varchar(max)" />
+          <Property Name="no_cp" Type="varchar(max)" />
+          <Property Name="alamat_sekolah" Type="varchar(max)" />
+          <Property Name="provinsi" Type="varchar(max)" />
+          <Property Name="kota" Type="varchar(max)" />
+          <Property Name="kecamatan" Type="varchar(max)" />
           <Property Name="jml_penerimaKIP" Type="int" />
           <Property Name="harga_spp" Type="money" Nullable="false" />
           <Property Name="harga_seragam" Type="money" Nullable="false" />
-          <Property Name="deskripsi" Type="varchar" MaxLength="500" />
+          <Property Name="deskripsi" Type="varchar(max)" />
           <Property Name="status" Type="int" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -123,25 +122,25 @@
           </Key>
           <Property Name="id_siswa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nisn" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="nama" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nama" Type="varchar(max)" Nullable="false" />
           <Property Name="jenis_kelamin" Type="int" Nullable="false" />
-          <Property Name="tempat_lahir" Type="varchar" MaxLength="100" />
+          <Property Name="tempat_lahir" Type="varchar(max)" />
           <Property Name="tanggal_lahir" Type="date" />
-          <Property Name="alamat" Type="varchar" MaxLength="200" />
-          <Property Name="no_telp" Type="varchar" MaxLength="13" Nullable="false" />
-          <Property Name="nomor_kip" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="alamat" Type="varchar(max)" />
+          <Property Name="no_telp" Type="varchar(max)" Nullable="false" />
+          <Property Name="nomor_kip" Type="varchar(max)" Nullable="false" />
           <Property Name="jenjang" Type="int" Nullable="false" />
           <Property Name="id_sekolah" Type="int" Nullable="false" />
           <Property Name="semester_awal" Type="date" />
           <Property Name="status" Type="int" />
-          <Property Name="nama_ayah" Type="varchar" MaxLength="50" />
-          <Property Name="pekerjaan_ayah" Type="varchar" MaxLength="50" />
-          <Property Name="nama_ibu" Type="varchar" MaxLength="50" />
-          <Property Name="pekerjaan_ibu" Type="varchar" MaxLength="50" />
+          <Property Name="nama_ayah" Type="varchar(max)" />
+          <Property Name="pekerjaan_ayah" Type="varchar(max)" />
+          <Property Name="nama_ibu" Type="varchar(max)" />
+          <Property Name="pekerjaan_ibu" Type="varchar(max)" />
           <Property Name="sb_kuota" Type="int" Nullable="false" />
           <Property Name="sb_seragam" Type="int" Nullable="false" />
-          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="password" Type="varchar(max)" Nullable="false" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
           <Property Name="modified_date" Type="date" />
@@ -152,17 +151,17 @@
             <PropertyRef Name="id_staff" />
           </Key>
           <Property Name="id_staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nama_staff" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="jenis_kelamin" Type="varchar" MaxLength="10" />
-          <Property Name="no_ktp" Type="varchar" MaxLength="16" />
-          <Property Name="tempat_lahir" Type="varchar" MaxLength="50" />
+          <Property Name="nama_staff" Type="varchar(max)" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="varchar(max)" />
+          <Property Name="no_ktp" Type="varchar(max)" />
+          <Property Name="tempat_lahir" Type="varchar(max)" />
           <Property Name="tanggal_lahir" Type="date" />
-          <Property Name="alamat" Type="varchar" MaxLength="100" />
-          <Property Name="no_telp" Type="varchar" MaxLength="13" />
-          <Property Name="pendidikan_terakhir" Type="varchar" MaxLength="100" />
+          <Property Name="alamat" Type="varchar(max)" />
+          <Property Name="no_telp" Type="varchar(max)" />
+          <Property Name="pendidikan_terakhir" Type="varchar(max)" />
           <Property Name="tahun_masuk" Type="date" />
-          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="password" Type="varchar(max)" Nullable="false" />
           <Property Name="role" Type="int" Nullable="false" />
           <Property Name="status" Type="int" />
           <Property Name="created_date" Type="date" />
@@ -176,13 +175,14 @@
           </Key>
           <Property Name="id_trans" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tgl_trans" Type="date" Nullable="false" />
-          <Property Name="nama_barang" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nama_barang" Type="varchar(max)" Nullable="false" />
           <Property Name="id_donatur" Type="int" Nullable="false" />
           <Property Name="id_kategori" Type="int" Nullable="false" />
+          <Property Name="no_resi" Type="varchar(max)" />
           <Property Name="foto_barang" Type="varchar(max)" />
           <Property Name="kuantitas" Type="int" />
           <Property Name="kondisi" Type="int" Nullable="false" />
-          <Property Name="keterangan" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="keterangan" Type="varchar(max)" Nullable="false" />
           <Property Name="status" Type="int" Nullable="false" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -229,7 +229,7 @@
           <Property Name="id_siswa" Type="int" Nullable="false" />
           <Property Name="id_staff" Type="int" />
           <Property Name="ukuran" Type="int" Nullable="false" />
-          <Property Name="keterangan" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="keterangan" Type="varchar(max)" Nullable="false" />
           <Property Name="total_biaya" Type="money" Nullable="false" />
           <Property Name="status" Type="int" />
           <Property Name="created_date" Type="date" />
@@ -261,7 +261,11 @@
           <Property Name="tgl_trans" Type="date" Nullable="false" />
           <Property Name="id_siswa" Type="int" Nullable="false" />
           <Property Name="id_staff" Type="int" />
-          <Property Name="id_barang" Type="int" Nullable="false" />
+          <Property Name="id_kategori" Type="int" />
+          <Property Name="kuantitas" Type="int" />
+          <Property Name="alamat" Type="varchar(max)" />
+          <Property Name="keterangan" Type="varchar(max)" />
+          <Property Name="no_resi" Type="varchar(max)" />
           <Property Name="status" Type="int" Nullable="false" />
           <Property Name="created_date" Type="date" />
           <Property Name="created_by" Type="varchar" MaxLength="50" />
@@ -424,15 +428,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_trPermintaanBarang_msBarang">
-          <End Role="msBarang" Type="Self.msBarang" Multiplicity="1" />
+        <Association Name="FK_trPermintaanBarang_msKategoriBarang">
+          <End Role="msKategoriBarang" Type="Self.msKategoriBarang" Multiplicity="0..1" />
           <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="msBarang">
-              <PropertyRef Name="id_barang" />
+            <Principal Role="msKategoriBarang">
+              <PropertyRef Name="id_kategori" />
             </Principal>
             <Dependent Role="trPermintaanBarang">
-              <PropertyRef Name="id_barang" />
+              <PropertyRef Name="id_kategori" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -528,8 +532,8 @@
             <End Role="msStaff" EntitySet="msStaff" />
             <End Role="trPengajuanSPP" EntitySet="trPengajuanSPP" />
           </AssociationSet>
-          <AssociationSet Name="FK_trPermintaanBarang_msBarang" Association="Self.FK_trPermintaanBarang_msBarang">
-            <End Role="msBarang" EntitySet="msBarang" />
+          <AssociationSet Name="FK_trPermintaanBarang_msKategoriBarang" Association="Self.FK_trPermintaanBarang_msKategoriBarang">
+            <End Role="msKategoriBarang" EntitySet="msKategoriBarang" />
             <End Role="trPermintaanBarang" EntitySet="trPermintaanBarang" />
           </AssociationSet>
           <AssociationSet Name="FK_trPermintaanBarang_msSiswa" Association="Self.FK_trPermintaanBarang_msSiswa">
@@ -560,9 +564,9 @@
             <PropertyRef Name="id_bank" />
           </Key>
           <Property Name="id_bank" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama_bank" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="atas_nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="no_rekening" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama_bank" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="atas_nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="no_rekening" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -575,19 +579,17 @@
             <PropertyRef Name="id_barang" />
           </Key>
           <Property Name="id_barang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_kategori" Type="Int32" Nullable="false" />
-          <Property Name="merk" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="merk" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="berat" Type="Int32" />
           <Property Name="kondisi" Type="Int32" Nullable="false" />
-          <Property Name="keterangan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="keterangan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="modified_date" Type="DateTime" Precision="0" />
           <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="msKategoriBarang" Relationship="Self.FK_msBarang_msKategori" FromRole="msBarang" ToRole="msKategoriBarang" />
-          <NavigationProperty Name="trPermintaanBarangs" Relationship="Self.FK_trPermintaanBarang_msBarang" FromRole="msBarang" ToRole="trPermintaanBarang" />
           <Property Name="foto_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="kuantitas" Type="Int32" />
         </EntityType>
@@ -596,18 +598,18 @@
             <PropertyRef Name="id_donatur" />
           </Key>
           <Property Name="id_donatur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="no_ktp" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="tempat_lahir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="no_ktp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tempat_lahir" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tanggal_lahir" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="jenis_kelamin" Type="Int32" Nullable="false" />
-          <Property Name="alamat" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="alamat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="agama" Type="Int32" Nullable="false" />
-          <Property Name="pekerjaan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pekerjaan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="kewarganegaraan" Type="Int32" Nullable="false" />
-          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="modified_date" Type="DateTime" Precision="0" />
           <NavigationProperty Name="trDonasiBarangs" Relationship="Self.FK_trDonasiBarang_msDonatur" FromRole="msDonatur" ToRole="trDonasiBarang" />
@@ -618,7 +620,7 @@
             <PropertyRef Name="id_kategori" />
           </Key>
           <Property Name="id_kategori" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -626,16 +628,17 @@
           <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="msBarangs" Relationship="Self.FK_msBarang_msKategori" FromRole="msKategoriBarang" ToRole="msBarang" />
           <NavigationProperty Name="trDonasiBarangs" Relationship="Self.FK_trDonasiBarang_msKategori" FromRole="msKategoriBarang" ToRole="trDonasiBarang" />
+          <NavigationProperty Name="trPermintaanBarangs" Relationship="danasuraModel.FK_trPermintaanBarang_msKategoriBarang" FromRole="msKategoriBarang" ToRole="trPermintaanBarang" />
         </EntityType>
         <EntityType Name="msProvider">
           <Key>
             <PropertyRef Name="id_provider" />
           </Key>
           <Property Name="id_provider" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama_provider" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="jenis_provider" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama_provider" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenis_provider" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="harga" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="deskripsi" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="deskripsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -648,18 +651,18 @@
             <PropertyRef Name="id_sekolah" />
           </Key>
           <Property Name="id_sekolah" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama_sekolah" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama_sekolah" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="akreditasi" Type="Int32" Nullable="false" />
-          <Property Name="nama_cp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="no_cp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="alamat_sekolah" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="provinsi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="kota" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="kecamatan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nama_cp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="no_cp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alamat_sekolah" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="provinsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="kota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="kecamatan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="jml_penerimaKIP" Type="Int32" />
           <Property Name="harga_spp" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="harga_seragam" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="deskripsi" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="deskripsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -673,25 +676,25 @@
           </Key>
           <Property Name="id_siswa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nisn" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="jenis_kelamin" Type="Int32" Nullable="false" />
-          <Property Name="tempat_lahir" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tempat_lahir" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="tanggal_lahir" Type="DateTime" Precision="0" />
-          <Property Name="alamat" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="no_telp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nomor_kip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="alamat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="no_telp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomor_kip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="jenjang" Type="Int32" Nullable="false" />
           <Property Name="id_sekolah" Type="Int32" Nullable="false" />
           <Property Name="semester_awal" Type="DateTime" Precision="0" />
           <Property Name="status" Type="Int32" />
-          <Property Name="nama_ayah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="pekerjaan_ayah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nama_ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="pekerjaan_ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nama_ayah" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pekerjaan_ayah" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nama_ibu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pekerjaan_ibu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="sb_kuota" Type="Int32" Nullable="false" />
           <Property Name="sb_seragam" Type="Int32" Nullable="false" />
-          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="modified_date" Type="DateTime" Precision="0" />
@@ -708,17 +711,17 @@
             <PropertyRef Name="id_staff" />
           </Key>
           <Property Name="id_staff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nama_staff" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="jenis_kelamin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="no_ktp" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="tempat_lahir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nama_staff" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jenis_kelamin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="no_ktp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tempat_lahir" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="tanggal_lahir" Type="DateTime" Precision="0" />
-          <Property Name="alamat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="no_telp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="pendidikan_terakhir" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="alamat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="no_telp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pendidikan_terakhir" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="tahun_masuk" Type="DateTime" Precision="0" />
-          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="role" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
@@ -735,11 +738,11 @@
           </Key>
           <Property Name="id_trans" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="nama_barang" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nama_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_donatur" Type="Int32" Nullable="false" />
           <Property Name="id_kategori" Type="Int32" Nullable="false" />
           <Property Name="kondisi" Type="Int32" Nullable="false" />
-          <Property Name="keterangan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="keterangan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -749,6 +752,7 @@
           <NavigationProperty Name="msKategoriBarang" Relationship="Self.FK_trDonasiBarang_msKategori" FromRole="trDonasiBarang" ToRole="msKategoriBarang" />
           <Property Name="foto_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="kuantitas" Type="Int32" />
+          <Property Name="no_resi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="trDonasiUang">
           <Key>
@@ -794,7 +798,7 @@
           <Property Name="id_siswa" Type="Int32" Nullable="false" />
           <Property Name="id_staff" Type="Int32" />
           <Property Name="ukuran" Type="Int32" Nullable="false" />
-          <Property Name="keterangan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="keterangan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="total_biaya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
@@ -830,15 +834,19 @@
           <Property Name="tgl_trans" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="id_siswa" Type="Int32" Nullable="false" />
           <Property Name="id_staff" Type="Int32" />
-          <Property Name="id_barang" Type="Int32" Nullable="false" />
           <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="created_date" Type="DateTime" Precision="0" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="modified_date" Type="DateTime" Precision="0" />
           <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="msBarang" Relationship="Self.FK_trPermintaanBarang_msBarang" FromRole="trPermintaanBarang" ToRole="msBarang" />
           <NavigationProperty Name="msSiswa" Relationship="Self.FK_trPermintaanBarang_msSiswa" FromRole="trPermintaanBarang" ToRole="msSiswa" />
           <NavigationProperty Name="msStaff" Relationship="Self.FK_trPermintaanBarang_msStaff" FromRole="trPermintaanBarang" ToRole="msStaff" />
+          <Property Name="id_kategori" Type="Int32" />
+          <Property Name="alamat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="keterangan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="no_resi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="msKategoriBarang" Relationship="danasuraModel.FK_trPermintaanBarang_msKategoriBarang" FromRole="trPermintaanBarang" ToRole="msKategoriBarang" />
+          <Property Name="kuantitas" Type="Int32" />
         </EntityType>
         <Association Name="FK_msSiswa_dtNISNKJP">
           <End Role="dtNISNKJP" Type="Self.dtNISNKJP" Multiplicity="1" />
@@ -873,18 +881,6 @@
             </Principal>
             <Dependent Role="msBarang">
               <PropertyRef Name="id_kategori" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_trPermintaanBarang_msBarang">
-          <End Role="msBarang" Type="Self.msBarang" Multiplicity="1" />
-          <End Role="trPermintaanBarang" Type="Self.trPermintaanBarang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="msBarang">
-              <PropertyRef Name="id_barang" />
-            </Principal>
-            <Dependent Role="trPermintaanBarang">
-              <PropertyRef Name="id_barang" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1060,10 +1056,6 @@
             <End Role="msKategoriBarang" EntitySet="msKategoriBarangs" />
             <End Role="msBarang" EntitySet="msBarangs" />
           </AssociationSet>
-          <AssociationSet Name="FK_trPermintaanBarang_msBarang" Association="Self.FK_trPermintaanBarang_msBarang">
-            <End Role="msBarang" EntitySet="msBarangs" />
-            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarangs" />
-          </AssociationSet>
           <AssociationSet Name="FK_trDonasiBarang_msDonatur" Association="Self.FK_trDonasiBarang_msDonatur">
             <End Role="msDonatur" EntitySet="msDonaturs" />
             <End Role="trDonasiBarang" EntitySet="trDonasiBarangs" />
@@ -1112,7 +1104,23 @@
             <End Role="msStaff" EntitySet="msStaffs" />
             <End Role="trPermintaanBarang" EntitySet="trPermintaanBarangs" />
           </AssociationSet>
+          <AssociationSet Name="FK_trPermintaanBarang_msKategoriBarang" Association="danasuraModel.FK_trPermintaanBarang_msKategoriBarang">
+            <End Role="msKategoriBarang" EntitySet="msKategoriBarangs" />
+            <End Role="trPermintaanBarang" EntitySet="trPermintaanBarangs" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_trPermintaanBarang_msKategoriBarang">
+          <End Type="danasuraModel.msKategoriBarang" Role="msKategoriBarang" Multiplicity="0..1" />
+          <End Type="danasuraModel.trPermintaanBarang" Role="trPermintaanBarang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msKategoriBarang">
+              <PropertyRef Name="id_kategori" />
+            </Principal>
+            <Dependent Role="trPermintaanBarang">
+              <PropertyRef Name="id_kategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1150,7 +1158,6 @@
                 <ScalarProperty Name="kuantitas" ColumnName="kuantitas" />
                 <ScalarProperty Name="foto_barang" ColumnName="foto_barang" />
                 <ScalarProperty Name="id_barang" ColumnName="id_barang" />
-                <ScalarProperty Name="nama" ColumnName="nama" />
                 <ScalarProperty Name="id_kategori" ColumnName="id_kategori" />
                 <ScalarProperty Name="merk" ColumnName="merk" />
                 <ScalarProperty Name="berat" ColumnName="berat" />
@@ -1296,6 +1303,7 @@
           <EntitySetMapping Name="trDonasiBarangs">
             <EntityTypeMapping TypeName="danasuraModel.trDonasiBarang">
               <MappingFragment StoreEntitySet="trDonasiBarang">
+                <ScalarProperty Name="no_resi" ColumnName="no_resi" />
                 <ScalarProperty Name="kuantitas" ColumnName="kuantitas" />
                 <ScalarProperty Name="foto_barang" ColumnName="foto_barang" />
                 <ScalarProperty Name="id_trans" ColumnName="id_trans" />
@@ -1384,11 +1392,15 @@
           <EntitySetMapping Name="trPermintaanBarangs">
             <EntityTypeMapping TypeName="danasuraModel.trPermintaanBarang">
               <MappingFragment StoreEntitySet="trPermintaanBarang">
+                <ScalarProperty Name="kuantitas" ColumnName="kuantitas" />
+                <ScalarProperty Name="no_resi" ColumnName="no_resi" />
+                <ScalarProperty Name="keterangan" ColumnName="keterangan" />
+                <ScalarProperty Name="alamat" ColumnName="alamat" />
+                <ScalarProperty Name="id_kategori" ColumnName="id_kategori" />
                 <ScalarProperty Name="id_trans" ColumnName="id_trans" />
                 <ScalarProperty Name="tgl_trans" ColumnName="tgl_trans" />
                 <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
                 <ScalarProperty Name="id_staff" ColumnName="id_staff" />
-                <ScalarProperty Name="id_barang" ColumnName="id_barang" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="created_date" ColumnName="created_date" />
                 <ScalarProperty Name="created_by" ColumnName="created_by" />

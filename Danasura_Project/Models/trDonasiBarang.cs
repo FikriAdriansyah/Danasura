@@ -28,6 +28,7 @@ namespace Danasura_Project.Models
         public string modified_by { get; set; }
         public string foto_barang { get; set; }
         public Nullable<int> kuantitas { get; set; }
+        public string no_resi { get; set; }
     
         public virtual msDonatur msDonatur { get; set; }
         public virtual msKategoriBarang msKategoriBarang { get; set; }

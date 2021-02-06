@@ -14,14 +14,7 @@ namespace Danasura_Project.Models
     
     public partial class msBarang
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public msBarang()
-        {
-            this.trPermintaanBarangs = new HashSet<trPermintaanBarang>();
-        }
-    
         public int id_barang { get; set; }
-        public string nama { get; set; }
         public int id_kategori { get; set; }
         public string merk { get; set; }
         public Nullable<int> berat { get; set; }
@@ -36,7 +29,5 @@ namespace Danasura_Project.Models
         public Nullable<int> kuantitas { get; set; }
     
         public virtual msKategoriBarang msKategoriBarang { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<trPermintaanBarang> trPermintaanBarangs { get; set; }
     }
 }

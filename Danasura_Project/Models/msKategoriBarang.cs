@@ -19,6 +19,7 @@ namespace Danasura_Project.Models
         {
             this.msBarangs = new HashSet<msBarang>();
             this.trDonasiBarangs = new HashSet<trDonasiBarang>();
+            this.trPermintaanBarangs = new HashSet<trPermintaanBarang>();
         }
     
         public int id_kategori { get; set; }
@@ -33,5 +34,7 @@ namespace Danasura_Project.Models
         public virtual ICollection<msBarang> msBarangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<trDonasiBarang> trDonasiBarangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<trPermintaanBarang> trPermintaanBarangs { get; set; }
     }
 }
